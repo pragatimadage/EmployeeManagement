@@ -15,11 +15,11 @@
                       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
                             <style>
                                  .navbar{
-              background-color:#062456;
-         }
-         body{
-             background-color:aliceblue;
-         }
+                                          background-color:#062456;
+                                     }
+                                     body{
+                                         background-color:aliceblue;
+                                     }
                                 .navbar-nav li a{
                                     margin-left: 70px;
                                 }

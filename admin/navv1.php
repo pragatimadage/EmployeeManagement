@@ -105,7 +105,7 @@ session_start();
     <div class="container">
  
 </div>
-    <div class="container">
+      <div class="container">
                        <h2>User Details</h2>
                             <?php
                     $servername = "localhost";
@@ -151,8 +151,8 @@ mysqli_close($conn);
 
 <div class="container">
          
-  <table class="table" >
-    <thead>
+  <table class="table table-bordered table-hover" style="background-color:#F2EDED">
+    <thead style="background-color:gray; color:white;">
       <tr>
         <th>Srno.</th>
 <!--        <th>ID</th>-->
@@ -160,10 +160,7 @@ mysqli_close($conn);
         <th>ADDRESS</th>
         <th>CONTACT</th> 
         <th>SALARY</th> 
-        <th>IMAGE</th>
-          <th>DELETE</th>
-          <th>UPDATE</th>
-        
+        <th>Delete</th>
 
       </tr>
     </thead>
@@ -179,7 +176,6 @@ mysqli_close($conn);
 <!--        <td><a src="upload/$id<?php echo $row['id']?>.jpg" hieght="50" width="50"></a></td>-->
           <td><img src="Upload/<?php echo $row['id'];?>.jpg" height="50" width="50"></td>
 <td><a href="dbdlt.php?id=<?php echo $row['id']; ?>"onclick="return confirm('Do You Want to Delete?');">Delete</a></td>
-        <td><a href="Update.php ?id=<?php echo $row['id']?>">Update</a></td>  
       <?php } ?>
     </tbody>
   </table>
@@ -214,4 +210,3 @@ mysqli_close($conn);
     <?php }else header("location:index.php");?>
 
 </html>
-
