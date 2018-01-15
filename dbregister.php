@@ -18,8 +18,11 @@ $id=uniqid();
     if($sql=$conn->query($result))
 	{
 
-   echo "Your Successfully Register!!!!!!!!";
-        header("location:index.php");
+//   echo "Your Successfully Register!!!!!!!!";
+        $msg = " Congratulation.. Successfully Register ";
+        echo "<script>alert('$msg');window.location.assign('index.php');</script>";
+
+//        header("location:index.php");
         
 }
     else{

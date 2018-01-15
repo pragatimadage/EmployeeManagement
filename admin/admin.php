@@ -24,8 +24,9 @@ session_start();
     <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="../navv.php">Home</a>
-    </div>
+      <a class="navbar-brand" href="navv1.php">Home</a>
+        
+   
 <!--
     <ul class="nav navbar-nav">
         <li><a href="../navv.php">BACK</a></li>
@@ -45,7 +46,9 @@ session_start();
     </ul>
       
       </div>
-   </nav> 
+    
+    </nav>
+    </div>
     <div class="well">
   <h2>Peace Infotech</h2>
 
@@ -59,6 +62,8 @@ session_start();
    </div> 
     
 </div>
+    
+    </div>
 
 </body><?php }else{ header("location:../index.php");
                   }

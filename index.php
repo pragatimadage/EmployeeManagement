@@ -19,7 +19,7 @@ if(isset($_SESSION['flag']))
     <link rel="stylesheet" href="login_assets/css/bootstrap.min.css" type="text/css"/>
     <link rel="stylesheet" href="login_assets/css/style.css" type="text/css"/>
 </head>
-<body "backgound-color:blue">
+<body>
 
 <div class="container">
 

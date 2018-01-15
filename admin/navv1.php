@@ -1,7 +1,7 @@
 <?php
 session_start();
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
     <?php if(isset($_SESSION['flag'])){ ?>
@@ -19,11 +19,12 @@ session_start();
   <div class="container-fluid">
    
     <ul class="nav navbar-nav">
-      <li class="active"><a href="navv.php">Home</a></li>
-     
+      <li class="active"><a href="navv1.php">Home</a></li>
+      <li class="active"><a href="../viewuser.php">view user</a></li>
+        <li>  <a href="addemployee_1.php">Add Employee</a></li>
       </ul>
        <ul class="nav  navbar-right">
-      <li> </li>
+      
      <div class="dropdown">
         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><?php echo $_SESSION['flag'];?></button> 
            <div class="dropdown-menu">
@@ -98,10 +99,9 @@ $sql = "SELECT * FROM `add1`";
         <td><?php echo $row['address']; ?></td>
         <td><?php echo $row['contact']; ?></td>
         <td><?php echo $row['salary']; ?></td>
-<!--
+
         <td> <a href="admin/dbdlt.php?id=<?php echo $row['id']; ?>" onclick="return confirm('Do you want to delete this ? ');">Delete</a></td>
        
--->
       </tr>
                 
 

@@ -77,7 +77,7 @@
                                     </div>
                                     <br/>
                                     <div class="text-center">
-                                        <button type="submit" name="add" class="btn btn-info btn-fill btn-wd btn-block"><a href="../navv.php">EXIT</a></button>
+                                        <button type="submit" name="add" class="btn btn-info btn-fill btn-wd btn-block"><a href="navv1.php">EXIT</a></button>
                                     </div>
                                     <div class="clearfix"></div>
                                 </form>

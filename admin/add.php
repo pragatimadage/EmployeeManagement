@@ -23,7 +23,7 @@ $sal = $_POST['salary'];
 	{
 
     echo "Done";
- header("location:../navv.php");
+ header("location:navv1.php");
         
 }
     else{
