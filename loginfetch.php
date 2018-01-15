@@ -21,7 +21,7 @@ include("connection.php");
              echo "Successfully login";
       $_SESSION['flag']=$row['email'];
            
-             echo "<script>window.location.assign('admin.php');</script>";
+             echo "<script>window.location.assign('navv.php');</script>";
 
          }
      }
