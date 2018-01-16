@@ -26,6 +26,8 @@ session_start();
    <ul class="nav navbar-nav">
       <a class="navbar-brand" href="navv1.php">Home</a>
        </ul> 
+        
+
       <ul class="nav  navbar-right">
       
      <div class="dropdown">
@@ -37,7 +39,11 @@ session_start();
        </ul>
     </div>
      </nav>
-    </div>
+
+      
+      
+        </div>
+
 
 
     <div class="well">
