@@ -23,32 +23,23 @@ session_start();
 <div class="container-fluid">
     <nav class="navbar navbar-inverse">
   <div class="container-fluid">
-    <div class="navbar-header">
+   <ul class="nav navbar-nav">
       <a class="navbar-brand" href="navv1.php">Home</a>
-        
-   
-<!--
-    <ul class="nav navbar-nav">
-        <li><a href="../navv.php">BACK</a></li>
-      </ul>
--->
+       </ul> 
       <ul class="nav  navbar-right">
-      <div class="dropdown">
+      
+     <div class="dropdown">
         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><?php echo $_SESSION['flag'];?></button> 
            <div class="dropdown-menu">
                <a class="dropdown-item"  href="logout.php" onclick="return confirm('Do You Want To Logout?')">Logout</a>
-           
            </div>
            </div>
-         
-
-      
-    </ul>
-      
-      </div>
-    
-    </nav>
+       </ul>
     </div>
+     </nav>
+    </div>
+
+    
     <div class="well">
   <h2>Peace Infotech</h2>
 
@@ -61,9 +52,7 @@ session_start();
 
    </div> 
     
-</div>
-    
-    </div>
+
 
 </body><?php }else{ header("location:../index.php");
                   }

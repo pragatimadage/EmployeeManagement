@@ -23,7 +23,7 @@ session_start();
      
       </ul>
        <ul class="nav  navbar-right">
-      <li> </li>
+      
      <div class="dropdown">
         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><?php echo $_SESSION['flag'];?></button> 
            <div class="dropdown-menu">
