@@ -59,10 +59,21 @@ if ($conn->connect_error)
     die("Connection failed: " . $conn->connect_error);
  
 }
-$sql = "SELECT * FROM `add1`";
-   $result = $conn->query($sql);           
-  
-     
+          $pa=$_GET['page'];
+          
+        if($pa=="" || $pa=="1")
+        {
+            $page1=0;
+        }
+  else
+  {
+    $page1=($pa*3)-3;
+  }                                  
+$sql = "SELECT * FROM `add1` limit $page1,3";
+   $result = $conn->query($sql);
+                                       $sql1 = "SELECT * FROM `add1` ";
+   $result1 = $conn->query($sql1);         
+
         mysqli_close($conn);
 
 
@@ -98,16 +109,26 @@ $sql = "SELECT * FROM `add1`";
         <td><?php echo $row['address']; ?></td>
         <td><?php echo $row['contact']; ?></td>
         <td><?php echo $row['salary']; ?></td>
-<!--
-        <td> <a href="admin/dbdlt.php?id=<?php echo $row['id']; ?>" onclick="return confirm('Do you want to delete this ? ');">Delete</a></td>
-       
--->
-      </tr>
+
                 
 
       <?php } ?>
     </tbody>
   </table>
+    <?php
+    $count=mysqli_num_rows($result1);
+                                    
+    $p=$count/3;
+   $p=ceil($p);
+                                       
+                      for($i=1;$i<=$p;$i++)
+                                       { 
+                                           ?>
+    <a href="navv.php?page=<?php echo $i;?>"><?php echo $i;?> </a><?php
+                                            
+                                       }
+                                    ?>   
+                                       
 </div>
     
 

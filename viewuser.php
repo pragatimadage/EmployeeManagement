@@ -42,9 +42,24 @@ if ($conn->connect_error)
     die("Connection failed: " . $conn->connect_error);
  
 }
-$sql = "SELECT * FROM `signup`";
-   $result = $conn->query($sql);           
-  
+    if(isset($_GET['page1'])){
+        $paa = $_GET['page1'];
+    }else{
+        $paa = 1;
+    }
+        if($paa=="" || $paa=="1")
+        {
+            $pagee1=0;
+        }
+                                       else
+                                       {
+                                           $pagee1=($paa*3)-3;
+                                       }
+
+$sql = "SELECT * FROM `signup` limit $paa,3";
+   $result = $conn->query($sql);
+$sql1 = "SELECT * FROM `signup` ";
+   $result1 = $conn->query($sql1);         
      
         mysqli_close($conn);
 
@@ -81,6 +96,17 @@ $sql = "SELECT * FROM `signup`";
       <?php } ?>
     </tbody>
   </table>
+    <?php
+$count=mysqli_num_rows($result1);
+    $pa=$count/3;
+    $pa=ceil($pa);
+    for($i=1;$i<=$pa;$i++)
+    {
+?><a href="viewuser.php?page1=<?php echo $i;?>"><?php echo $i;?></a>
+
+<?php
+    }?>
+     
 </div>
     </body>
 <?php }}else header("location:index.php");?>
