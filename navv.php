@@ -59,6 +59,7 @@ if ($conn->connect_error)
     die("Connection failed: " . $conn->connect_error);
  
 }
+<<<<<<< HEAD
           $pa=$_GET['page'];
           
         if($pa=="" || $pa=="1")
@@ -74,6 +75,12 @@ $sql = "SELECT * FROM `add1` limit $page1,3";
                                        $sql1 = "SELECT * FROM `add1` ";
    $result1 = $conn->query($sql1);         
 
+=======
+$sql = "SELECT * FROM `add1` ORDER BY Address_id desc";
+   $result = $conn->query($sql);           
+  
+     
+>>>>>>> da0e79b3f0887fe5c1fdb084cf79f3728506a612
         mysqli_close($conn);
 
 

@@ -12,6 +12,30 @@ session_start();
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+.pagination {
+    display: inline-block;
+    margin-left: 30%;
+}
+
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.pagination a.active {
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+    border-radius: 5px;
+}
+</style>
 </head>
 <body>
 
@@ -60,6 +84,7 @@ if ($conn->connect_error)
     die("Connection failed: " . $conn->connect_error);
  
 }
+
        if(isset($_GET['page1'])){
         $paa = $_GET['page1'];
     }else{
@@ -74,12 +99,16 @@ if ($conn->connect_error)
                                            $pagee1=($paa*3)-3;
                                        }
 
-$sql = "SELECT * FROM `add1` limit $pagee1,3";
+$sql = "SELECT * FROM `add1`ORDER BY Address_id desc limit $pagee1,3";
    $result = $conn->query($sql);
-$sql1 = "SELECT * FROM `add1` ";
-   $result1 = $conn->query($sql1);         
 
-        mysqli_close($conn);
+$sql = "SELECT * FROM `add1` ORDER BY Address_id desc";
+   $result = $conn->query($sql);           
+   mysqli_close($conn);
+   
+
+        
+
 
 
 ?>
@@ -138,7 +167,16 @@ $count=mysqli_num_rows($result1);
 
 </div>
     
-
+   <div class="pagination">
+  <a href="#">&laquo;</a>
+  <a href="#" class="active">1</a>
+  <a href="#" >2</a>
+  <a href="#">3</a>
+  <a href="#">4</a>
+  <a href="#">5</a>
+  <a href="#">6</a>
+  <a href="#">&raquo;</a>
+  </div>
 </body>
     <?php }else header("location:../index.php");?>
 </html>
