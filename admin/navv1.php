@@ -20,7 +20,7 @@ session_start();
    
     <ul class="nav navbar-nav">
       <li class="active"><a href="navv1.php">Home</a></li>
-      <li class="active"><a href="../viewuser.php">view user</a></li>
+      <li class=""><a href="../viewuser.php">view user</a></li>
         <li>  <a href="addemployee_1.php">Add Employee</a></li>
       </ul>
        <ul class="nav  navbar-right">

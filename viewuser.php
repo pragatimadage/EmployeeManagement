@@ -18,7 +18,7 @@ if(isset($_SESSION['flag']))
     <body>
         <nav class="navbar navbar-inverse ">
   <div class="container-fluid">
-    <div class="navbar-header navbar-right" >
+    <div class="navbar-header" >
       <a class="navbar-brand" href="admin/navv1.php">Back</a>
     </div>
             </div>
