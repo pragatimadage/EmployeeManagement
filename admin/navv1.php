@@ -100,7 +100,7 @@ $sql = "SELECT * FROM `add1`";
         <td><?php echo $row['contact']; ?></td>
         <td><?php echo $row['salary']; ?></td>
 
-        <td> <a href="admin/dbdlt.php?id=<?php echo $row['id']; ?>" onclick="return confirm('Do you want to delete this ? ');">Delete</a></td>
+        <td> <a href="dbdlt.php?id=<?php echo $row['id']; ?>" onclick="return confirm('Do you want to delete this ? ');">Delete</a></td>
        
       </tr>
                 

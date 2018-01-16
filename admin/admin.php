@@ -46,7 +46,7 @@ session_start();
     </ul>
       
       </div>
-    
+        </div>
     </nav>
     </div>
     <div class="well">
@@ -60,11 +60,7 @@ session_start();
 -->
 
    </div> 
-    
-</div>
-    
-    </div>
-
+ 
 </body><?php }else{ header("location:../index.php");
                   }
     ?>
