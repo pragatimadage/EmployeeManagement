@@ -26,7 +26,7 @@ session_start();
     <div class="navbar-header">
       <a class="navbar-brand" href="navv1.php">Home</a>
         
-   
+       </div>
 <!--
     <ul class="nav navbar-nav">
         <li><a href="../navv.php">BACK</a></li>
@@ -45,7 +45,7 @@ session_start();
       
     </ul>
       
-      </div>
+      
         </div>
     </nav>
     </div>

@@ -112,5 +112,5 @@ $sql = "SELECT * FROM `add1`";
     
 
 </body>
-    <?php }else header("location:index.php");?>
+    <?php }else header("location:../index.php");?>
 </html>
