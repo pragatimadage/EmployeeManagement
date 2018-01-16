@@ -42,7 +42,7 @@ if ($conn->connect_error)
     die("Connection failed: " . $conn->connect_error);
  
 }
-$sql = "SELECT * FROM `signup`";
+$sql = "SELECT * FROM `signup` ORDER BY Address_id desc";
    $result = $conn->query($sql);           
   
      
