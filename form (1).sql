@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 16, 2018 at 05:48 AM
--- Server version: 10.1.29-MariaDB
--- PHP Version: 7.2.0
+-- Generation Time: Jan 16, 2018 at 01:31 PM
+-- Server version: 10.1.25-MariaDB
+-- PHP Version: 5.6.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `add1` (
+  `Address_id` int(100) NOT NULL,
   `id` varchar(36) NOT NULL,
   `name` varchar(32) NOT NULL,
   `address` varchar(32) NOT NULL,
@@ -40,15 +41,12 @@ CREATE TABLE `add1` (
 -- Dumping data for table `add1`
 --
 
-INSERT INTO `add1` (`id`, `name`, `address`, `contact`, `salary`) VALUES
-('5a5c70699961b', 'diuhsajk,', 'm,dnas,', '4098029348', 321),
-('5a5c7c3f5cd7c', 'wdwqcqsd', 'ewdfw', '3432432312', 444),
-('5a5c7c7e89d87', 'ghfhyj', 'hgfg', '3453545454', 343),
-('5a5c7cd05a165', 'sadf', 'safssadf', '3242141243', 3424),
-('5a5c9675ef6e8', 'ghfhjg', 'kjhjk', '6546545665', 564),
-('5a5c96d2b86d1', 'afas', 'fsd', '2432134324', 435),
-('5a5c97012a2b6', 'afas', 'fsd', '2432134324', 435),
-('5a5c999114476', 'opiuyisdyeiu', 'esugfre', '7665379876', 234565876);
+INSERT INTO `add1` (`Address_id`, `id`, `name`, `address`, `contact`, `salary`) VALUES
+(1, '5a5dd232dfbc8', 'pragati', 'mandaki', '9878765766', 234354),
+(2, '5a5dd256211ed', 'omkar', 'agave', '8756354234', 534546),
+(3, '5a5dd2662dfd7', 'swaraj', 'fghhgrt', '8768768574', 343456456),
+(4, '5a5dd7ac11c15', 'arati', 'vahal', '7686774534', 2147483647),
+(5, '5a5dd7be362a5', 'anamilka', 'agave', '7865745345', 2147483647);
 
 -- --------------------------------------------------------
 
@@ -57,6 +55,7 @@ INSERT INTO `add1` (`id`, `name`, `address`, `contact`, `salary`) VALUES
 --
 
 CREATE TABLE `signup` (
+  `Address_id` int(100) NOT NULL,
   `id` varchar(36) NOT NULL,
   `fname` varchar(255) NOT NULL,
   `lname` varchar(255) NOT NULL,
@@ -70,12 +69,11 @@ CREATE TABLE `signup` (
 -- Dumping data for table `signup`
 --
 
-INSERT INTO `signup` (`id`, `fname`, `lname`, `email`, `password`, `mobile`, `gender`) VALUES
-('5a5c4b45617bf', 'zahid', 'khan', 'khan@gmail.com', '123', '6782472398', 'MALE'),
-('5a5c9b31c657c', 'vaibhavi', 'madage', 'pragati@gmail.com', 'jhgfghg', '8798675465', 'FEMALE'),
-('5a5c9b7c6d877', 'vaibhavi', 'madage', 'pragati@gmail.com', '', '8798675465', 'FEMALE'),
-('5a5c9b953a6b7', 'dhsjf', 'rgdrgt', 'pragati@gmail.com', '353453456', '7876845635', 'FEMALE'),
-('5a5c9c48404de', 'dfergt', 'eret', 'pragati@gmail.com', '4353456456', '9865345231', 'MALE');
+INSERT INTO `signup` (`Address_id`, `id`, `fname`, `lname`, `email`, `password`, `mobile`, `gender`) VALUES
+(1, '5a5dd4bd8739c', 'pragati', 'prajakta', 'pragati@gmail.com', 'pragati', '8796773456', 'FEMALE'),
+(2, '5a5dd4f0662bf', 'swaraj', 'amfage', 'pragati@gmail.com', 'pragati', '8657456545', 'MALE'),
+(3, '5a5dd75d5ee0d', 'Navanita', 'dhumak', 'navanita@gmail.com', 'navanita', '8796854634', 'FEMALE'),
+(4, '5a5dd7816c1cf', 'ankita', 'zagade', 'ankita@gmail.com', 'ankita', '8968757653', 'FEMALE');
 
 -- --------------------------------------------------------
 
@@ -106,14 +104,28 @@ INSERT INTO `superadmin` (`id`, `Name`, `Email`, `Image`, `password`) VALUES
 -- Indexes for table `add1`
 --
 ALTER TABLE `add1`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`Address_id`);
 
 --
 -- Indexes for table `signup`
 --
 ALTER TABLE `signup`
-  ADD PRIMARY KEY (`id`);
-COMMIT;
+  ADD PRIMARY KEY (`Address_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `add1`
+--
+ALTER TABLE `add1`
+  MODIFY `Address_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT for table `signup`
+--
+ALTER TABLE `signup`
+  MODIFY `Address_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

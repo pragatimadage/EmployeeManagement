@@ -18,7 +18,31 @@ if(isset($_SESSION['flag']))
             #nav1{
                 margin-left: 90%;
             }
-        </style>
+               
+.pagination {
+    display: inline-block;
+    margin-left: 30%;
+}
+
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.pagination a.active {
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+    border-radius: 5px;
+}
+</style>
+      
 </head>
     <body>
         <nav class="navbar navbar-inverse ">
@@ -82,6 +106,16 @@ $sql = "SELECT * FROM `signup` ORDER BY Address_id desc";
     </tbody>
   </table>
 </div>
+           <div class="pagination">
+  <a href="#">&laquo;</a>
+  <a href="#" class="active">1</a>
+  <a href="#" >2</a>
+  <a href="#">3</a>
+  <a href="#">4</a>
+  <a href="#">5</a>
+  <a href="#">6</a>
+  <a href="#">&raquo;</a>
+  </div>
     </body>
 <?php }}else header("location:index.php");?>
 </html>
