@@ -39,7 +39,7 @@ session_start();
      </nav>
     </div>
 
-    
+
     <div class="well">
   <h2>Peace Infotech</h2>
 
@@ -51,8 +51,6 @@ session_start();
 -->
 
    </div> 
-    
-
 
 </body><?php }else{ header("location:../index.php");
                   }
