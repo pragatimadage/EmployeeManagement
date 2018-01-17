@@ -1,7 +1,6 @@
 <?php
 session_start();
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
     <?php if(isset($_SESSION['flag'])){ ?>
@@ -12,7 +11,11 @@ session_start();
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <style>
+           <style>
+            #nav1{
+                margin-left: 90%;
+            }
+               
 .pagination {
     display: inline-block;
     margin-left: 30%;
@@ -42,11 +45,12 @@ session_start();
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
    
-    <ul class="nav navbar-nav">
+<ul class="nav navbar-nav">
       <li class="active"><a href="navv1.php">Home</a></li>
       <li class=""><a href="../viewuser.php">view user</a></li>
         <li>  <a href="addemployee_1.php">Add Employee</a></li>
       </ul>
+       <ul class="nav  navbar-right">
        <ul class="nav  navbar-right">
       
      <div class="dropdown">
@@ -58,7 +62,7 @@ session_start();
            </div>
       
         </ul>
-      
+      </ul>
       </div>
    </nav> 
 
@@ -85,30 +89,27 @@ if ($conn->connect_error)
  
 }
 
-       if(isset($_GET['page1'])){
-        $paa = $_GET['page1'];
+                        
+                                       
+                                         if(isset($_GET['page'])){
+        $paa = $_GET['page'];
     }else{
-        $paa = 1;
+        $paa =1;
     }
         if($paa=="" || $paa=="1")
         {
-            $pagee1=0;
+            $page1=0;
         }
                                        else
                                        {
-                                           $pagee1=($paa*3)-3;
+                                           $page1=($paa*3)-3;
                                        }
-
-$sql = "SELECT * FROM `add1`ORDER BY Address_id desc limit $pagee1,3";
+$sql = "SELECT * FROM `add1` ORDER BY Address_id desc limit $page1,3";
    $result = $conn->query($sql);
+     $sql1 = "SELECT * FROM `add1` ORDER BY Address_id desc"; 
+   $result1 = $conn->query($sql1);         
 
-$sql = "SELECT * FROM `add1` ORDER BY Address_id desc";
-   $result = $conn->query($sql);           
-   mysqli_close($conn);
-   
-
-        
-
+mysqli_close($conn);
 
 
 ?>
@@ -144,32 +145,33 @@ $sql = "SELECT * FROM `add1` ORDER BY Address_id desc";
         <td><?php echo $row['contact']; ?></td>
         <td><?php echo $row['salary']; ?></td>
 
-        <td> <a href="dbdlt.php?id=<?php echo $row['id']; ?>" onclick="return confirm('Do you want to delete this ? ');">Delete</a></td>
-       
-      </tr>
                 
 
       <?php } ?>
     </tbody>
   </table>
-
     <?php
-$count=mysqli_num_rows($result1);
-    $pa=$count/3;
-    $pa=ceil($pa);
-    for($i=1;$i<=$pa;$i++)
-    {
-?><a href="navv1.php?pagee=<?php echo $i;?>"><?php echo $i;?></a>
-
-<?php
-    }?>
+    $count=mysqli_num_rows($result1);
+                                    
+    $p=$count/3;
+   $p=ceil($p);
+                                       
+                      for($i=1;$i<=$p;$i++)
+                                       { 
+                                           ?>
     
-
+    <a href="navv1.php?page=<?php echo $i;?>"><?php echo $i;?></a><?php
+                                            
+                                       }
+                                    ?>  
+      
+                                       
 </div>
-    
-   <div class="pagination">
+
+<!--
+             <div class="pagination">
   <a href="#">&laquo;</a>
-  <a href="#" class="active">1</a>
+  <a href="" class="active">1</a>
   <a href="#" >2</a>
   <a href="#">3</a>
   <a href="#">4</a>
@@ -177,6 +179,9 @@ $count=mysqli_num_rows($result1);
   <a href="#">6</a>
   <a href="#">&raquo;</a>
   </div>
+-->
+
 </body>
-    <?php }else header("location:../index.php");?>
+    <?php }else header("location:index.php");?>
+
 </html>

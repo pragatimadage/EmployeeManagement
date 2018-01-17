@@ -1,19 +1,18 @@
 <?php
 session_start();
-if(isset($_SESSION['flag']))
-{
-?>
 
+?>
 <!DOCTYPE html>
 <html lang="en">
+    <?php if(isset($_SESSION['flag'])){ ?>
+<head>
   <title>Bootstrap Example</title>
-    <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <style>
+           <style>
             #nav1{
                 margin-left: 90%;
             }
@@ -41,19 +40,42 @@ if(isset($_SESSION['flag']))
     border-radius: 5px;
 }
 </style>
-      
 </head>
-    <body>
-        <nav class="navbar navbar-inverse ">
+<body>
+
+<nav class="navbar navbar-inverse">
   <div class="container-fluid">
-    <div class="navbar-header" >
-      <a class="navbar-brand " id="nav1" href="admin/navv1.php">Back</a>
-    </div>
-            </div>
-            
-        </nav>
-        <div class="container">
-   <h2>User Details</h2>
+   
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="navv.php">Home</a></li>
+     
+      </ul>
+       <ul class="nav  navbar-right">
+      
+     <div class="dropdown">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><?php echo $_SESSION['flag'];?></button> 
+           <div class="dropdown-menu">
+               <a class="dropdown-item"  href="logout.php" onclick="return confirm('Do You Want To Logout?')">Logout</a>
+           
+           </div>
+           </div>
+      
+        </ul>
+      
+      </div>
+   </nav> 
+
+  
+<div class="container">
+    <div class="jumbotron">
+          <h1>Welcome Admin</h1>
+         
+  </div>
+</div>
+ 
+
+    <div class="container">
+   <h2>Employee Details</h2>
         <?php
 $servername = "localhost";
 $username = "root";
@@ -66,13 +88,10 @@ if ($conn->connect_error)
  
 }
 
-
-//    if(isset($_GET['page1'])){
-//        $paa = $_GET['page1'];
-
-  if(isset($_GET['page'])){
+                        
+                                       
+                                         if(isset($_GET['page'])){
         $paa = $_GET['page'];
-
     }else{
         $paa =1;
     }
@@ -80,33 +99,26 @@ if ($conn->connect_error)
         {
             $page1=0;
         }
-                                       else{
+                                       else
+                                       {
                                            $page1=($paa*3)-3;
                                        }
-
-
-$sql = "SELECT * FROM `signup` limit $paa,3";
+$sql = "SELECT * FROM `add1` ORDER BY Address_id desc limit $page1,3";
    $result = $conn->query($sql);
-$sql1 = "SELECT * FROM `signup` ";
+     $sql1 = "SELECT * FROM `add1` ORDER BY Address_id desc"; 
    $result1 = $conn->query($sql1);         
 
-$sql = "SELECT * FROM `signup` ORDER BY Address_id desc";
-   $result = $conn->query($sql);           
-  
-
-     
-
-$sql= "SELECT * FROM `signup` ORDER BY Address_id desc limit $page1,3";
-   $result= $conn->query($sql);
-$sql1= "SELECT * FROM `signup` ORDER BY Address_id desc ";
-   $result1= $conn->query($sql1);         
-
-
-        mysqli_close($conn);
+mysqli_close($conn);
 
 
 ?>
+
+
+     
+    
+  
 </div>
+
 <div class="container">
          
   <table class="table">
@@ -115,10 +127,11 @@ $sql1= "SELECT * FROM `signup` ORDER BY Address_id desc ";
         <th>Srno.</th>
         <th>ID</th>
         <th>NAME</th>
-        <th>Email</th>
-        <th>Mobile</th> 
-        <th>Gender</th> 
-        <th>Delete</th> 
+        <th>ADDRESS</th>
+        <th>CONTACT</th> 
+        <th>SALARY</th> 
+<!--        <th>Delete</th> -->
+
       </tr>
     </thead>
     <tbody>
@@ -126,17 +139,17 @@ $sql1= "SELECT * FROM `signup` ORDER BY Address_id desc ";
       <tr>
           <td><?php $i++; echo $i; ?></td>
         <td><?php echo $row['id']; ?></td>
-        <td><?php echo $row['fname']; ?></td>
-        <td><?php echo $row['email']; ?></td>
-        <td><?php echo $row['mobile']; ?></td>
-        <td><?php echo $row['gender']; ?></td>
-        <td> <a href="registerdelet.php?id=<?php echo $row['id']; ?>" onclick="return confirm('Do you want to delete this ? ');">Delete</a></td>
-       
-      </tr>
+        <td><?php echo $row['name']; ?></td>
+        <td><?php echo $row['address']; ?></td>
+        <td><?php echo $row['contact']; ?></td>
+        <td><?php echo $row['salary']; ?></td>
+
+                
+
       <?php } ?>
     </tbody>
   </table>
-   <?php
+    <?php
     $count=mysqli_num_rows($result1);
                                     
     $p=$count/3;
@@ -146,18 +159,18 @@ $sql1= "SELECT * FROM `signup` ORDER BY Address_id desc ";
                                        { 
                                            ?>
     
-    <a href="Viewuser.php?page=<?php echo $i;?>"><?php echo $i;?></a>
-
-<?php
-    }?>
-    
-
+    <a href="navv2.php?page=<?php echo $i;?>"><?php echo $i;?></a><?php
+                                            
+                                       }
+                                    ?>  
+      
+                                       
 </div>
-    
+
 <!--
-   <div class="pagination">
+             <div class="pagination">
   <a href="#">&laquo;</a>
-  <a href="#" class="active">1</a>
+  <a href="" class="active">1</a>
   <a href="#" >2</a>
   <a href="#">3</a>
   <a href="#">4</a>
@@ -166,7 +179,7 @@ $sql1= "SELECT * FROM `signup` ORDER BY Address_id desc ";
   <a href="#">&raquo;</a>
   </div>
 -->
+
 </body>
-    <?php }else header("location:../index.php");?>
-    
+    <?php }else header("location:index.php");?>
 </html>
