@@ -54,7 +54,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                <label>Mobile No</label>
-                                                <input type="text" name="mobile" id="no" class="form-control border-input no" placeholder="Mobile No" maxlength="10" required>
+                                                <input type="text" name="mobile" id="no" class="form-control border-input no" placeholder="Mobile No" maxlength="10" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')" required>
 
                                                 
                                             </div>
@@ -64,7 +64,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Salary</label>
-                                                <input type="text" name="salary" id="salary" class="form-control border-input no" placeholder="Salary" required>
+                                                <input type="text" name="salary" id="salary" class="form-control border-input no" placeholder="Salary" onkeyup="if (/\D/g.test(salary.value)) salary.value = salary.value.replace(/\D/g,'')" required>
                                             </div>
                                         </div>
                                     </div>
@@ -112,23 +112,23 @@
                   
               }
      });
-       $(".no").keydown(function(){
-        var key=event.which;
-              // var z=/(7|8|9)\d{9}/;
-              // var y=z.value();
-
-              if(key >=48 && key <= 57)
-              {  
-                return true;
-                
-                }
-                  
-              else
-              {
-                return false;
-                
-              }
-           });
+//       $(".no").keydown(function(){
+//        var key=event.which;
+//              // var z=/(7|8|9)\d{9}/;
+//              // var y=z.value();
+//
+//              if(key >=48 && key <= 57)
+//              {  
+//                return true;
+//                
+//                }
+//                  
+//              else
+//              {
+//                return false;
+//                
+//              }
+//           });
       
   });
         $(document).ready(function(){

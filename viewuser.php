@@ -66,7 +66,7 @@ if ($conn->connect_error)
     die("Connection failed: " . $conn->connect_error);
  
 }
-<<<<<<< HEAD
+
     if(isset($_GET['page1'])){
         $paa = $_GET['page1'];
     }else{
@@ -85,11 +85,11 @@ $sql = "SELECT * FROM `signup` limit $paa,3";
    $result = $conn->query($sql);
 $sql1 = "SELECT * FROM `signup` ";
    $result1 = $conn->query($sql1);         
-=======
+
 $sql = "SELECT * FROM `signup` ORDER BY Address_id desc";
    $result = $conn->query($sql);           
   
->>>>>>> da0e79b3f0887fe5c1fdb084cf79f3728506a612
+
      
         mysqli_close($conn);
 

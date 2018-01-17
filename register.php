@@ -102,7 +102,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Mobile</label>
-                                                <input type="text" name="mobile" class="form-control border-input" id="no" placeholder="Mobile NO" maxlength="10">
+                                                <input type="text" name="mobile" class="form-control border-input" id="no" placeholder="Mobile NO" maxlength="10" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                             </div>
                                         </div>
                                         </div>
@@ -172,20 +172,20 @@
           return true;
         }
      });
-        $("#no").keydown(function(){
-        var key=event.which;
-          if(key >=48 && key <= 57)
-              {  
-                return true;
-                
-                }
-             else
-              {
-                return false;
-                
-              }
-
-      });
+//        $("#no").keydown(function(){
+//        var key=event.which;
+//          if(key >=48 && key <= 57)
+//              {  
+//                return true;
+//                
+//                }
+//             else
+//              {
+//                return false;
+//                
+//              }
+//
+//      });
     });
    $(document).ready(function(){
     var a = $("#lname");
