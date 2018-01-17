@@ -87,29 +87,28 @@ if ($conn->connect_error)
     die("Connection failed: " . $conn->connect_error);
  
 }
-<<<<<<< HEAD
-          $pa=$_GET['page'];
-          
-        if($pa=="" || $pa=="1")
+
+                        
+                                       
+                                         if(isset($_GET['page'])){
+        $paa = $_GET['page'];
+    }else{
+        $paa =1;
+    }
+        if($paa=="" || $paa=="1")
         {
             $page1=0;
         }
-  else
-  {
-    $page1=($pa*3)-3;
-  }                                  
-$sql = "SELECT * FROM `add1` limit $page1,3";
+                                       else
+                                       {
+                                           $page1=($paa*3)-3;
+                                       }
+$sql = "SELECT * FROM `add1` ORDER BY Address_id desc limit $page1,3";
    $result = $conn->query($sql);
-                                       $sql1 = "SELECT * FROM `add1` ";
+     $sql1 = "SELECT * FROM `add1` ORDER BY Address_id desc"; 
    $result1 = $conn->query($sql1);         
 
-=======
-$sql = "SELECT * FROM `add1` ORDER BY Address_id desc";
-   $result = $conn->query($sql);           
-  
-     
->>>>>>> da0e79b3f0887fe5c1fdb084cf79f3728506a612
-        mysqli_close($conn);
+mysqli_close($conn);
 
 
 ?>
@@ -159,15 +158,19 @@ $sql = "SELECT * FROM `add1` ORDER BY Address_id desc";
                       for($i=1;$i<=$p;$i++)
                                        { 
                                            ?>
-    <a href="navv.php?page=<?php echo $i;?>"><?php echo $i;?> </a><?php
+    
+    <a href="navv.php?page=<?php echo $i;?>"><?php echo $i;?></a><?php
                                             
                                        }
-                                    ?>   
+                                    ?>  
+      
                                        
 </div>
+
+<!--
              <div class="pagination">
   <a href="#">&laquo;</a>
-  <a href="#" class="active">1</a>
+  <a href="" class="active">1</a>
   <a href="#" >2</a>
   <a href="#">3</a>
   <a href="#">4</a>
@@ -175,6 +178,8 @@ $sql = "SELECT * FROM `add1` ORDER BY Address_id desc";
   <a href="#">6</a>
   <a href="#">&raquo;</a>
   </div>
+-->
+
 </body>
     <?php }else header("location:index.php");?>
 </html>

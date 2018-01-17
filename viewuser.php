@@ -6,7 +6,6 @@ if(isset($_SESSION['flag']))
 
 <!DOCTYPE html>
 <html lang="en">
-    <?php if(isset($_SESSION['flag'])){ ?>
   <title>Bootstrap Example</title>
     <head>
   <meta charset="utf-8">
@@ -53,7 +52,7 @@ if(isset($_SESSION['flag']))
             </div>
             
         </nav>
-  <div class="container">
+        <div class="container">
    <h2>User Details</h2>
         <?php
 $servername = "localhost";
@@ -66,37 +65,29 @@ if ($conn->connect_error)
     die("Connection failed: " . $conn->connect_error);
  
 }
-<<<<<<< HEAD
-    if(isset($_GET['page1'])){
-        $paa = $_GET['page1'];
+  if(isset($_GET['page'])){
+        $paa = $_GET['page'];
     }else{
-        $paa = 1;
+        $paa =1;
     }
         if($paa=="" || $paa=="1")
         {
-            $pagee1=0;
+            $page1=0;
         }
-                                       else
-                                       {
-                                           $pagee1=($paa*3)-3;
+                                       else{
+                                           $page1=($paa*3)-3;
                                        }
 
-$sql = "SELECT * FROM `signup` limit $paa,3";
-   $result = $conn->query($sql);
-$sql1 = "SELECT * FROM `signup` ";
-   $result1 = $conn->query($sql1);         
-=======
-$sql = "SELECT * FROM `signup` ORDER BY Address_id desc";
-   $result = $conn->query($sql);           
-  
->>>>>>> da0e79b3f0887fe5c1fdb084cf79f3728506a612
-     
+$sql= "SELECT * FROM `signup` ORDER BY Address_id desc limit $page1,3";
+   $result= $conn->query($sql);
+$sql1= "SELECT * FROM `signup` ORDER BY Address_id desc ";
+   $result1= $conn->query($sql1);         
+
         mysqli_close($conn);
 
 
 ?>
 </div>
-
 <div class="container">
          
   <table class="table">
@@ -126,19 +117,26 @@ $sql = "SELECT * FROM `signup` ORDER BY Address_id desc";
       <?php } ?>
     </tbody>
   </table>
-    <?php
-$count=mysqli_num_rows($result1);
-    $pa=$count/3;
-    $pa=ceil($pa);
-    for($i=1;$i<=$pa;$i++)
-    {
-?><a href="viewuser.php?page1=<?php echo $i;?>"><?php echo $i;?></a>
+   <?php
+    $count=mysqli_num_rows($result1);
+                                    
+    $p=$count/3;
+   $p=ceil($p);
+                                       
+                      for($i=1;$i<=$p;$i++)
+                                       { 
+                                           ?>
+    
+    <a href="Viewuser.php?page=<?php echo $i;?>"><?php echo $i;?></a>
 
 <?php
     }?>
-     
+    
+
 </div>
-           <div class="pagination">
+    
+<!--
+   <div class="pagination">
   <a href="#">&laquo;</a>
   <a href="#" class="active">1</a>
   <a href="#" >2</a>
@@ -148,6 +146,8 @@ $count=mysqli_num_rows($result1);
   <a href="#">6</a>
   <a href="#">&raquo;</a>
   </div>
-    </body>
-<?php }}else header("location:index.php");?>
+-->
+</body>
+    <?php }else header("location:../index.php");?>
+    
 </html>

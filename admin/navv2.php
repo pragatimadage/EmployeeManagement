@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,12 +46,10 @@ session_start();
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
    
-<ul class="nav navbar-nav">
-      <li class="active"><a href="navv1.php">Home</a></li>
-      <li class=""><a href="../viewuser.php">view user</a></li>
-        <li>  <a href="addemployee_1.php">Add Employee</a></li>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="navv.php">Home</a></li>
+     
       </ul>
-       <ul class="nav  navbar-right">
        <ul class="nav  navbar-right">
       
      <div class="dropdown">
@@ -62,7 +61,7 @@ session_start();
            </div>
       
         </ul>
-      </ul>
+      
       </div>
    </nav> 
 
@@ -160,7 +159,7 @@ mysqli_close($conn);
                                        { 
                                            ?>
     
-    <a href="navv1.php?page=<?php echo $i;?>"><?php echo $i;?></a><?php
+    <a href="navv2.php?page=<?php echo $i;?>"><?php echo $i;?></a><?php
                                             
                                        }
                                     ?>  
@@ -183,5 +182,4 @@ mysqli_close($conn);
 
 </body>
     <?php }else header("location:index.php");?>
-
 </html>
