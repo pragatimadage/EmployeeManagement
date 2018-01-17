@@ -35,7 +35,7 @@ session_start();
     margin-right: 5px;
 }
 
-.pagination a:hover:not(.active) {
+.pagination a:hover{
     background-color: #ddd;
     border-radius: 5px;
 }

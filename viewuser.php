@@ -37,7 +37,7 @@ if(isset($_SESSION['flag']))
     border-radius: 5px;
 }
 
-.pagination a:hover:not(.active) {
+.pagination a:hover {
     background-color: #ddd;
     border-radius: 5px;
 }
