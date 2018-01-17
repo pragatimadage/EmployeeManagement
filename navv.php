@@ -32,6 +32,7 @@ session_start();
 .pagination a.active {
     background-color: #4CAF50;
     color: white;
+    margin-left: 5px;
     border-radius: 5px;
 }
 
@@ -149,6 +150,8 @@ $sql = "SELECT * FROM `add1` ORDER BY Address_id desc limit $page1,3";
       <?php } ?>
     </tbody>
   </table>
+    <div class="pagination">
+       
     <?php
     $count=mysqli_num_rows($result1);
                                     
@@ -159,11 +162,15 @@ $sql = "SELECT * FROM `add1` ORDER BY Address_id desc limit $page1,3";
                                        { 
                                            ?>
     
-    <a href="navv.php?page=<?php echo $i;?>"><?php echo $i;?></a><?php
-                                            
-                                       }
-                                    ?>  
       
+    <a href="navv.php?page=<?php echo $i;?>" class="active" ><?php echo $i;?></a><?php
+                                             
+                                       }
+                                       
+                                    ?> 
+    
+      
+     </div>
                                        
 </div>
 

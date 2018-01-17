@@ -32,6 +32,7 @@ session_start();
     background-color: #4CAF50;
     color: white;
     border-radius: 5px;
+    margin-right: 5px;
 }
 
 .pagination a:hover:not(.active) {
@@ -150,6 +151,7 @@ mysqli_close($conn);
       <?php } ?>
     </tbody>
   </table>
+    <div class="pagination">
     <?php
     $count=mysqli_num_rows($result1);
                                     
@@ -160,14 +162,14 @@ mysqli_close($conn);
                                        { 
                                            ?>
     
-    <a href="navv1.php?page=<?php echo $i;?>"><?php echo $i;?></a><?php
+    <a href="navv1.php?page=<?php echo $i;?>" class="active"><?php echo $i;?></a><?php
                                             
                                        }
                                     ?>  
       
                                        
 </div>
-
+</div>
 <!--
              <div class="pagination">
   <a href="#">&laquo;</a>

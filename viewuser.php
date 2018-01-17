@@ -33,6 +33,7 @@ if(isset($_SESSION['flag']))
 .pagination a.active {
     background-color: #4CAF50;
     color: white;
+    margin-left: 5px;
     border-radius: 5px;
 }
 
@@ -136,6 +137,7 @@ $sql1= "SELECT * FROM `signup` ORDER BY Address_id desc ";
       <?php } ?>
     </tbody>
   </table>
+    <div class="pagination">
    <?php
     $count=mysqli_num_rows($result1);
                                     
@@ -146,12 +148,12 @@ $sql1= "SELECT * FROM `signup` ORDER BY Address_id desc ";
                                        { 
                                            ?>
     
-    <a href="Viewuser.php?page=<?php echo $i;?>"><?php echo $i;?></a>
+    <a href="Viewuser.php?page=<?php echo $i;?>" class="active"><?php echo $i;?></a>
 
 <?php
     }?>
     
-
+  </div>
 </div>
     
 <!--
