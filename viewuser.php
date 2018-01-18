@@ -138,6 +138,9 @@ $sql1= "SELECT * FROM `signup` ORDER BY Address_id desc ";
     </tbody>
   </table>
     <div class="pagination">
+         <?php if($_GET['page'] != 1){ ?>
+        <a href="viewuser.php?page=<?=$_GET['page']-1<=$i;?>">prev</a>
+        <?php } ?>
    <?php
     $count=mysqli_num_rows($result1);
                                     
@@ -148,10 +151,14 @@ $sql1= "SELECT * FROM `signup` ORDER BY Address_id desc ";
                                        { 
                                            ?>
     
-    <a href="Viewuser.php?page=<?php echo $i;?>" class="active"><?php echo $i;?></a>
+    <a href="viewuser.php?page=<?php echo $i;?>" <?php if($_GET['page'] == $i){echo 'class="active"';} ?>><?php echo $i;?></a>
 
 <?php
     }?>
+         <?php if($_GET['page'] != $p){ ?>
+        <a href="viewuser.php?page=<?=$_GET['page']+1<=$i;?>">next</a>
+        <?php } ?>
+       
     
   </div>
 </div>

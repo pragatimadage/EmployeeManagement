@@ -37,7 +37,7 @@ session_start();
 }
 
 .pagination a:hover{
-    background-color: #ddd;
+    background-color:green;
     border-radius: 5px;
 }
 </style>
@@ -151,9 +151,10 @@ $sql = "SELECT * FROM `add1` ORDER BY Address_id desc limit $page1,3";
     </tbody>
   </table>
     <div class="pagination">
-   
+        <?php if(isset($_GET['page']) != 1){ ?>
+        <a href="navv.php?page=<?=$_GET['page']-1<=$i;?>">prev</a>
+        <?php } ?>
         
-    <a href="navv.php?page=<?= $_GET['page']-1?>">prev</a> 
     <?php
    
     $count=mysqli_num_rows($result1);
@@ -166,13 +167,14 @@ $sql = "SELECT * FROM `add1` ORDER BY Address_id desc limit $page1,3";
     
                                                
 
-  <a href="navv.php?page=<?php echo $i;?>" class="active" ><?php echo $i;?></a>  <?php
+  <a href="navv.php?page=<?php echo $i;?>" <?php if(isset($_GET['page']) == $i){echo 'class="active"';} ?> ><?php echo $i;?></a>  <?php
                                             
                                        }
                                        
                                     ?> 
-        
-        <a href="navv.php?page=<?=$_GET['page']+1;?>">next</a>
+        <?php if(isset($_GET['page']) != $p){ ?>
+        <a href="navv.php?page=<?=$_GET['page']+1<=$i;?>">next</a>
+        <?php } ?>
      </div>
 </div>
 

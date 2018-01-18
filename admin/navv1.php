@@ -94,6 +94,7 @@ if ($conn->connect_error)
                                        
                                          if(isset($_GET['page'])){
         $paa = $_GET['page'];
+          $page = mysql_real_escape_string($_GET['page']);                                      
     }else{
         $paa =1;
     }
@@ -115,10 +116,6 @@ mysqli_close($conn);
 
 ?>
 
-
-     
-    
-  
 </div>
 
 <div class="container">
@@ -152,6 +149,10 @@ mysqli_close($conn);
     </tbody>
   </table>
     <div class="pagination">
+        <?php if($_GET['page'] !=1){
+        ?>
+        <a href="navv1.php?page=<?=$_GET['page']-1<=$i;?>">prev</a>
+          <?php } ?>
     <?php
     $count=mysqli_num_rows($result1);
                                     
@@ -162,26 +163,16 @@ mysqli_close($conn);
                                        { 
                                            ?>
     
-    <a href="navv1.php?page=<?php echo $i;?>" class="active"><?php echo $i;?></a><?php
+    <a href="navv1.php?page=<?php echo $i;?>" <?php if($_GET['page'] == $i){echo 'class="active"';} ?> ><?php echo $i;?></a><?php
                                             
                                        }
-                                    ?>  
-      
+                                    ?>
+        <?php if($_GET['page'] != $p){ ?>
+        <a href="navv1.php?page=<?=$_GET['page']+1<=$i;?>">next</a>
+        <?php } ?>
                                        
+
 </div>
-</div>
-<!--
-             <div class="pagination">
-  <a href="#">&laquo;</a>
-  <a href="" class="active">1</a>
-  <a href="#" >2</a>
-  <a href="#">3</a>
-  <a href="#">4</a>
-  <a href="#">5</a>
-  <a href="#">6</a>
-  <a href="#">&raquo;</a>
-  </div>
--->
 
 </body>
     <?php }else header("location:index.php");?>
