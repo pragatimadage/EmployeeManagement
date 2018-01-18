@@ -160,10 +160,10 @@ mysqli_close($conn);
                                        { 
                                            ?>
     
-    <a href="navv1.php?page=<?php echo $i;?>"><?php echo $i;?></a><?php
-                                            
-                                       }
-                                    ?>  
+    <a href="navv1.php?page=<?php echo $i;?><div class="pagination" "&laquo;"></div>"><?php echo $i;?></a>
+    <?php
+         }
+        ?>  
       
                                        
 </div>
