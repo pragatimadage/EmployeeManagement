@@ -64,27 +64,25 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error)
 {
     die("Connection failed: " . $conn->connect_error);
- 
 }
-
 
 //    if(isset($_GET['page1'])){
 //        $paa = $_GET['page1'];
-
+       $page = (isset($_GET['page'])) ? (int)$_GET['page'] : 0;
   if(isset($_GET['page'])){
         $paa = $_GET['page'];
 
     }else{
-        $paa =1;
+      $_GET['page']=1;
+//        $paa =1;
     }
         if($paa=="" || $paa=="1")
         {
             $page1=0;
         }
-                                       else{
-                                           $page1=($paa*3)-3;
-                                       }
-
+                  else{
+                    $page1=($paa*3)-3;
+                    }
 
 $sql = "SELECT * FROM `signup` limit $paa,3";
    $result = $conn->query($sql);
@@ -93,19 +91,12 @@ $sql1 = "SELECT * FROM `signup` ";
 
 $sql = "SELECT * FROM `signup` ORDER BY Address_id desc";
    $result = $conn->query($sql);           
-  
-
-     
 
 $sql= "SELECT * FROM `signup` ORDER BY Address_id desc limit $page1,3";
    $result= $conn->query($sql);
 $sql1= "SELECT * FROM `signup` ORDER BY Address_id desc ";
    $result1= $conn->query($sql1);         
-
-
-        mysqli_close($conn);
-
-
+ mysqli_close($conn);
 ?>
 </div>
 <div class="container">
@@ -138,28 +129,23 @@ $sql1= "SELECT * FROM `signup` ORDER BY Address_id desc ";
     </tbody>
   </table>
     <div class="pagination">
-         <?php if($_GET['page'] != 1){ ?>
-        <a href="viewuser.php?page=<?=$_GET['page']-1<=$i;?>">prev</a>
-        <?php } ?>
+        <?php if($_GET['page'] != 1){ ?> 
+        <a href="viewuser.php?page=<?=$_GET['page']-1 ?>" >prev</a>
+      <?php } ?>
    <?php
-    $count=mysqli_num_rows($result1);
-                                    
+    $count=mysqli_num_rows($result1);                                
     $p=$count/3;
    $p=ceil($p);
-                                       
-                      for($i=1;$i<=$p;$i++)
-                                       { 
-                                           ?>
-    
-    <a href="viewuser.php?page=<?php echo $i;?>" <?php if($_GET['page'] == $i){echo 'class="active"';} ?>><?php echo $i;?></a>
+        for($i=1;$i<=$p;$i++)
+         { 
+            ?>
+  <a href="viewuser.php?page=<?php echo $i;?>" <?php if($_GET['page'] == $i){echo 'class="active"';} ?>><?php echo $i;?></a>
 
 <?php
     }?>
          <?php if($_GET['page'] != $p){ ?>
-        <a href="viewuser.php?page=<?=$_GET['page']+1<=$i;?>">next</a>
+        <a href="viewuser.php?page=<?=$_GET['page']+1 ?>">next</a>
         <?php } ?>
-       
-    
   </div>
 </div>
     

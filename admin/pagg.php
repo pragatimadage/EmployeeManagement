@@ -93,7 +93,7 @@ if ($conn->connect_error)
    else
    {    
        $_GET['page']=1;
-//       $paa =1;
+       $paa =1;
    }
     $paa = $_GET['page'];
     if($paa=="" || $paa=="1")
@@ -147,10 +147,7 @@ mysqli_close($conn);
     </tbody>
   </table>
     <div class="pagination">
-         <?php if($_GET['page'] != 1){ ?> 
-        <a href="navv1.php?page=<?=$_GET['page']-1 ?>" >prev</a>
-      <?php } ?>
-       
+     <input type="button" name="b1" value="prev" onclick="" >
     <?php
     $count=mysqli_num_rows($result1);
                                     
@@ -165,10 +162,8 @@ mysqli_close($conn);
                                             
                                        }
                                     ?>
-     <!--    <?php if($_GET['page'] != $p){ ?>
-        <a href="navv1.php?page=<?=$_GET['page']+1 ?>">next</a>
-        <?php } ?>-->
-       
+        
+<!--       <a href="">next</a>-->
                                        
     </div>
     </div>
