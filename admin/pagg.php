@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,9 +32,10 @@ session_start();
     background-color: #4CAF50;
     color: white;
     border-radius: 5px;
+    margin-right: 5px;
 }
 
-.pagination a:hover:not(.active) {
+.pagination a:hover{
     background-color: #ddd;
     border-radius: 5px;
 }
@@ -46,26 +46,24 @@ session_start();
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
    
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="navv.php">Home</a></li>
-     
+<ul class="nav navbar-nav">
+      <li class="active"><a href="navv1.php">Home</a></li>
+      <li class=""><a href="../viewuser.php">view user</a></li>
+        <li>  <a href="addemployee_1.php">Add Employee</a></li>
       </ul>
        <ul class="nav  navbar-right">
+      
       
      <div class="dropdown">
         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><?php echo $_SESSION['flag'];?></button> 
            <div class="dropdown-menu">
                <a class="dropdown-item"  href="logout.php" onclick="return confirm('Do You Want To Logout?')">Logout</a>
-           
+        </div>
            </div>
-           </div>
-      
-        </ul>
-      
+    </ul>
       </div>
    </nav> 
 
-  
 <div class="container">
     <div class="jumbotron">
           <h1>Welcome Admin</h1>
@@ -87,22 +85,25 @@ if ($conn->connect_error)
     die("Connection failed: " . $conn->connect_error);
  
 }
+ if(isset($_GET['page']))
+    {
+      $paa = $_GET['page'];
 
-                        
-                                       
-                                         if(isset($_GET['page'])){
-        $paa = $_GET['page'];
-    }else{
-        $paa =1;
-    }
-        if($paa=="" || $paa=="1")
+   }
+   else
+   {    
+       $_GET['page']=1;
+       $paa =1;
+   }
+    $paa = $_GET['page'];
+    if($paa=="" || $paa=="1")
         {
             $page1=0;
         }
-                                       else
-                                       {
-                                           $page1=($paa*3)-3;
-                                       }
+   else
+    {
+      $page1=($paa*3)-3;
+    }
 $sql = "SELECT * FROM `add1` ORDER BY Address_id desc limit $page1,3";
    $result = $conn->query($sql);
      $sql1 = "SELECT * FROM `add1` ORDER BY Address_id desc"; 
@@ -113,10 +114,6 @@ mysqli_close($conn);
 
 ?>
 
-
-     
-    
-  
 </div>
 
 <div class="container">
@@ -149,6 +146,8 @@ mysqli_close($conn);
       <?php } ?>
     </tbody>
   </table>
+    <div class="pagination">
+     <input type="button" name="b1" value="prev" onclick="" >
     <?php
     $count=mysqli_num_rows($result1);
                                     
@@ -159,27 +158,18 @@ mysqli_close($conn);
                                        { 
                                            ?>
     
-    <a href="navv2.php?page=<?php echo $i;?>"><?php echo $i;?></a><?php
+    <a href="navv1.php?page=<?php echo $i;?>"  <?php if($_GET['page'] == $i){echo 'class="active"';} ?>><?php echo $i;?></a><?php
                                             
                                        }
-                                    ?>  
-      
+                                    ?>
+        
+<!--       <a href="">next</a>-->
                                        
-</div>
+    </div>
+    </div>
 
-<!--
-             <div class="pagination">
-  <a href="#">&laquo;</a>
-  <a href="" class="active">1</a>
-  <a href="#" >2</a>
-  <a href="#">3</a>
-  <a href="#">4</a>
-  <a href="#">5</a>
-  <a href="#">6</a>
-  <a href="#">&raquo;</a>
-  </div>
--->
 
 </body>
     <?php }else header("location:index.php");?>
+
 </html>

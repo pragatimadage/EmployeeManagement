@@ -52,22 +52,18 @@ session_start();
         <li>  <a href="addemployee_1.php">Add Employee</a></li>
       </ul>
        <ul class="nav  navbar-right">
-       <ul class="nav  navbar-right">
+      
       
      <div class="dropdown">
         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><?php echo $_SESSION['flag'];?></button> 
            <div class="dropdown-menu">
                <a class="dropdown-item"  href="logout.php" onclick="return confirm('Do You Want To Logout?')">Logout</a>
-           
+        </div>
            </div>
-           </div>
-      
-        </ul>
-      </ul>
+    </ul>
       </div>
    </nav> 
 
-  
 <div class="container">
     <div class="jumbotron">
           <h1>Welcome Admin</h1>
@@ -89,23 +85,25 @@ if ($conn->connect_error)
     die("Connection failed: " . $conn->connect_error);
  
 }
+ if(isset($_GET['page']))
+    {
+      $paa = $_GET['page'];
 
-                        
-                                       
-                                         if(isset($_GET['page'])){
-        $paa = $_GET['page'];
-          $page = mysql_real_escape_string($_GET['page']);                                      
-    }else{
-        $paa =1;
-    }
-        if($paa=="" || $paa=="1")
+   }
+   else
+   {    
+       $_GET['page']=1;
+//       $paa =1;
+   }
+    $paa = $_GET['page'];
+    if($paa=="" || $paa=="1")
         {
             $page1=0;
         }
-                                       else
-                                       {
-                                           $page1=($paa*3)-3;
-                                       }
+   else
+    {
+      $page1=($paa*3)-3;
+    }
 $sql = "SELECT * FROM `add1` ORDER BY Address_id desc limit $page1,3";
    $result = $conn->query($sql);
      $sql1 = "SELECT * FROM `add1` ORDER BY Address_id desc"; 
@@ -149,10 +147,10 @@ mysqli_close($conn);
     </tbody>
   </table>
     <div class="pagination">
-        <?php if($_GET['page'] !=1){
-        ?>
-        <a href="navv1.php?page=<?=$_GET['page']-1<=$i;?>">prev</a>
-          <?php } ?>
+         <?php if($_GET['page'] != 1){ ?> 
+        <a href="navv1.php?page=<?=$_GET['page']-1 ?>" >prev</a>
+      <?php } ?>
+       
     <?php
     $count=mysqli_num_rows($result1);
                                     
@@ -163,24 +161,17 @@ mysqli_close($conn);
                                        { 
                                            ?>
     
-<<<<<<< HEAD
-    <a href="navv1.php?page=<?php echo $i;?><div class="pagination" "&laquo;"></div>"><?php echo $i;?></a>
-    <?php
-         }
-        ?>  
-      
-=======
+
     <a href="navv1.php?page=<?php echo $i;?>" <?php if($_GET['page'] == $i){echo 'class="active"';} ?> ><?php echo $i;?></a><?php
                                             
                                        }
                                     ?>
-        <?php if($_GET['page'] != $p){ ?>
-        <a href="navv1.php?page=<?=$_GET['page']+1<=$i;?>">next</a>
+       <?php if($_GET['page'] != $p){ ?>
+        <a href="navv1.php?page=<?=$_GET['page']+1 ?>">next</a>
         <?php } ?>
->>>>>>> 883b55eaefd39ebb4fb987c9a2f063a37d3255cf
-                                       
+    </div>
+    </div>
 
-</div>
 
 </body>
     <?php }else header("location:index.php");?>
