@@ -32,9 +32,10 @@ session_start();
     background-color: #4CAF50;
     color: white;
     border-radius: 5px;
+    margin-right: 5px;
 }
 
-.pagination a:hover:not(.active) {
+.pagination a:hover{
     background-color: #ddd;
     border-radius: 5px;
 }
@@ -93,6 +94,7 @@ if ($conn->connect_error)
                                        
                                          if(isset($_GET['page'])){
         $paa = $_GET['page'];
+          $page = mysql_real_escape_string($_GET['page']);                                      
     }else{
         $paa =1;
     }
@@ -114,10 +116,6 @@ mysqli_close($conn);
 
 ?>
 
-
-     
-    
-  
 </div>
 
 <div class="container">
@@ -150,6 +148,11 @@ mysqli_close($conn);
       <?php } ?>
     </tbody>
   </table>
+    <div class="pagination">
+        <?php if($_GET['page'] !=1){
+        ?>
+        <a href="navv1.php?page=<?=$_GET['page']-1<=$i;?>">prev</a>
+          <?php } ?>
     <?php
     $count=mysqli_num_rows($result1);
                                     
@@ -160,26 +163,24 @@ mysqli_close($conn);
                                        { 
                                            ?>
     
+<<<<<<< HEAD
     <a href="navv1.php?page=<?php echo $i;?><div class="pagination" "&laquo;"></div>"><?php echo $i;?></a>
     <?php
          }
         ?>  
       
+=======
+    <a href="navv1.php?page=<?php echo $i;?>" <?php if($_GET['page'] == $i){echo 'class="active"';} ?> ><?php echo $i;?></a><?php
+                                            
+                                       }
+                                    ?>
+        <?php if($_GET['page'] != $p){ ?>
+        <a href="navv1.php?page=<?=$_GET['page']+1<=$i;?>">next</a>
+        <?php } ?>
+>>>>>>> 883b55eaefd39ebb4fb987c9a2f063a37d3255cf
                                        
-</div>
 
-<!--
-             <div class="pagination">
-  <a href="#">&laquo;</a>
-  <a href="" class="active">1</a>
-  <a href="#" >2</a>
-  <a href="#">3</a>
-  <a href="#">4</a>
-  <a href="#">5</a>
-  <a href="#">6</a>
-  <a href="#">&raquo;</a>
-  </div>
--->
+</div>
 
 </body>
     <?php }else header("location:index.php");?>
