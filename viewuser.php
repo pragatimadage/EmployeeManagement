@@ -102,7 +102,7 @@
                         <thead>
                           <tr>
                             <th>Srno.</th>
-                            <th>ID</th>
+<!--                            <th>ID</th>-->
                             <th>NAME</th>
                             <th>Email</th>
                             <th>Mobile</th> 
@@ -114,7 +114,7 @@
                             <?php $i=0; while($row = $result->fetch_assoc()){ ?>
                           <tr>
                               <td><?php $i++; echo $i; ?></td>
-                            <td><?php echo $row['id']; ?></td>
+<!--                            <td><?php echo $row['id']; ?></td>-->
                             <td><?php echo $row['fname']; ?></td>
                             <td><?php echo $row['email']; ?></td>
                             <td><?php echo $row['mobile']; ?></td>

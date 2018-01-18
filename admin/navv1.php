@@ -122,12 +122,12 @@ mysqli_close($conn);
     <thead>
       <tr>
         <th>Srno.</th>
-        <th>ID</th>
+<!--        <th>ID</th>-->
         <th>NAME</th>
         <th>ADDRESS</th>
         <th>CONTACT</th> 
         <th>SALARY</th> 
-<!--        <th>Delete</th> -->
+        <th>Delete</th> 
 
       </tr>
     </thead>
@@ -135,14 +135,14 @@ mysqli_close($conn);
         <?php $i=0; while($row = $result->fetch_assoc()){ ?>
       <tr>
           <td><?php $i++; echo $i; ?></td>
-        <td><?php echo $row['id']; ?></td>
+<!--        <td><?php echo $row['id']; ?></td>-->
         <td><?php echo $row['name']; ?></td>
         <td><?php echo $row['address']; ?></td>
         <td><?php echo $row['contact']; ?></td>
         <td><?php echo $row['salary']; ?></td>
 
-                
-
+          <td> <a href="dbdlt.php?id=<?php echo $row['id']; ?>" onclick="return confirm('Do you want to delete this ? ');">Delete</a></td>        
+        </tr>
       <?php } ?>
     </tbody>
   </table>
