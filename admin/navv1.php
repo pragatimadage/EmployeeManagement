@@ -39,6 +39,14 @@ session_start();
     background-color: #ddd;
     border-radius: 5px;
 }
+               .btn{
+                   margin-top: 8px;
+                   margin-right: 10px;
+               }
+               .dropdown-menu{
+                   width: 165px;
+                  margin-right: 10px;
+               }
 </style>
 </head>
 <body>
@@ -54,12 +62,12 @@ session_start();
        <ul class="nav  navbar-right">
       
       
-     <div class="dropdown">
-        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><?php echo $_SESSION['flag'];?></button> 
-           <div class="dropdown-menu">
-               <a class="dropdown-item"  href="logout.php" onclick="return confirm('Do You Want To Logout?')">Logout</a>
-        </div>
-           </div>
+     <ul class="dropdown">
+        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown"><?php echo $_SESSION['flag'];?></button> 
+           <ul class="dropdown-menu">
+               <li><a class="dropdown-item"  href="logout.php" onclick="return confirm('Do You Want To Logout?')">Logout</a></li>
+        </ul>
+           </ul>
     </ul>
       </div>
    </nav> 

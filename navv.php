@@ -27,6 +27,7 @@
                         float: left;
                         padding: 8px 16px;
                         text-decoration: none;
+                            font-weight:500;
                         }
 
                         .pagination a.active {
@@ -39,7 +40,17 @@
                         .pagination a:hover{
                         background-color:green;
                         border-radius: 5px;
-                        }
+                            }
+                            .btn{
+/*                                padding-top: 10px;*/
+                                margin-top: 8px;
+                                width:160px;
+                                margin-right: 10px;
+                          }
+                            .dropdown-menu{
+/*                                margin-left: 8px;*/
+                                margin-right: 10px;
+                            }
                         </style>
                         </head>
                         <body>
@@ -48,18 +59,19 @@
                         <div class="container-fluid">
 
                         <ul class="nav navbar-nav">
-                        <li class="active"><a href="navv.php">Home</a></li>
+                        <li class="active" style="font-weight:bold; font-size:17px;"><a href="navv.php">Home</a></li>
 
                         </ul>
                         <ul class="nav  navbar-right">
 
-                        <div class="dropdown">
-                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><?php echo $_SESSION['flag'];?></button> 
-                        <div class="dropdown-menu">
-                        <a class="dropdown-item"  href="logout.php" onclick="return confirm('Do You Want To Logout?')">Logout</a>
+                        <ul class="dropdown">
+                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown"><?php echo $_SESSION['flag'];?></button> 
+                            
+                        <ul class="dropdown-menu">
+                        <li><a  class="dropdown-item" type="button"  href="logout.php" onclick="return confirm('Do You Want To Logout?')">Logout</a></li>
 
-                        </div>
-                        </div>
+                        </ul>
+                        </ul>
 
                         </ul>
 
@@ -150,9 +162,11 @@ mysqli_close($conn);
       <?php } ?>
     </tbody>
   </table>
+    </div>
+     <div class="container">
     <div class="pagination">
          <?php if($_GET['page'] != 1){ ?> 
-        <a href="navv.php?page=<?=$_GET['page']-1 ?>" >prev</a>
+        <a href="navv.php?page=<?=$_GET['page']-1 ?>" >&laquo;  Previous</a>
       <?php } ?>
        
     <?php
@@ -171,10 +185,11 @@ mysqli_close($conn);
                                        }
                                     ?>
        <?php if($_GET['page'] != $p){ ?>
-        <a href="navv.php?page=<?=$_GET['page']+1 ?>">next</a>
+        <a href="navv.php?page=<?=$_GET['page']+1 ?>">Next  &raquo;</a>
         <?php } ?>
     </div>
     </div>
+    
 
 
 </body>
