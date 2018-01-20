@@ -14,30 +14,51 @@
   <script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/js/select2.min.js"></script>
-
+     <style>
+         .navbar-nav li a{
+                        
+                                    font-family: font-family: "museo-sans", helvetica, sans-serif;
+                                    font-size:14px;
+                                    letter-spacing: 2px;
+              margin-left: 70px;
+         } 
+         .navbar-nav li a:hover{
+             background-color: limegreen 
+                 ! important;
+             color: white
+                 ! important;
+         } 
+         .navbar-nav li.active a{
+             background-color: limegreen 
+                 ! important;
+             color: white
+                 ! important;
+         }
+    </style>
 </head>
 <body>
-
+<nav class="navbar navbar-inverse">
+    <ul class="nav navbar-nav">
+        <li class="active"><a href="navv1.php">HOME</a></li>
+    </ul>
+    </nav>
 <div class="wrapper">
 	<div class="content">
             <div class="container-fluid">
-                <div class="well">
+              
                 <div class="row">
                     <center>
                     <div class="col-md-offset-4 col-lg-3" align="center">
                         <div class="card">
                             <div class="header">
-                                <h4 class="title">Add employee</h4>
+                                <h4 class="title" style="font-weight:bold;">ADD EMPLOYEE</h4>
                             </div>
                             <div class="content" >
                                 <form action="add.php" method="post" enctype="multipart/form-data">
                                     <div class="row" >
                                         <div class="col-md-12">
                                             <div class="form-group">
-
-                                      
-                            <label>Name</label>
-
+                                                    <label>NAME</label>
                                                 <input type="text" name="name" id="name" class="form-control border-input name" placeholder="Employee Name" required>
                                             </div>
                                         </div>
@@ -45,7 +66,7 @@
                                      <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label>Address</label>
+                                                <label>ADDRESS</label>
                                                 <input type="text" name="address" id="address" class="form-control border-input name" placeholder="Address" required>
                                             </div>
                                         </div>
@@ -53,7 +74,7 @@
                                        <div class="row" >
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                               <label>Mobile No</label>
+                                               <label>MOBILE NO</label>
                                                 <input type="text" name="mobile" id="no" class="form-control border-input no" placeholder="Mobile No" maxlength="10" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')" required>
 
                                                 
@@ -63,7 +84,7 @@
                                        <div class="row" >
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label>Salary</label>
+                                                <label>SALARY</label>
                                                 <input type="text" name="salary" id="salary" class="form-control border-input no" placeholder="Salary" onkeyup="if (/\D/g.test(salary.value)) salary.value = salary.value.replace(/\D/g,'')" required>
                                             </div>
                                         </div>
@@ -73,8 +94,8 @@
                                         <div class="row" >
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label>Image</label>
-                                                <input type="file" accesskey="image/*" name="pic" id="pic" placeholder="Picture" required>
+                                                <label>IMAGE</label>
+                                                <input type="file"  accesskey="image/*" name="pic" id="pic" placeholder="Picture" required>
                                       
                                         </div>
                                  
@@ -100,7 +121,7 @@
                     </div>
 
 
-                </div>
+               
             </div>
         </div>
     </div>
