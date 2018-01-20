@@ -14,10 +14,27 @@
                       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
                       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
                             <style>
-                                #nav1{
-                                    margin-left: 90%;
+                                .navbar-nav li a{
+                                    margin-left: 70px;
                                 }
-
+                      .nav li a{
+                         font-family: "museo-sans", helvetica, sans-serif; 
+                         font-weight:bold;
+                         }
+                                .navbar-nav li a:hover{
+                                     color:white
+                                        !important;
+                                    background-color: limegreen
+                                        !important;
+                                }
+                             
+                                 .navbar-nav li.active a
+                                {
+                                    background-color: limegreen
+                                        ! important;
+                                    color: white
+                                        !important;
+                                }
                     .pagination {
                         display: inline-block;
                         margin-left: 30%;
@@ -45,14 +62,18 @@
 
                     </head>
                         <body>
-                            <nav class="navbar navbar-inverse ">
-                      <div class="container-fluid">
-                        <div class="navbar-header" >
-                          <a class="navbar-brand " id="nav1" href="admin/navv1.php">Back</a>
-                        </div>
-                                </div>
+                        <nav class="navbar navbar-inverse">
+                        <div class="container-fluid">
 
-                            </nav>
+                        <ul class="nav navbar-nav">
+                              <li class="active" ><a  href="admin/navv1.php">HOME</a></li>
+                           
+                              
+                             
+                        </ul>
+                        
+                        </div>
+                    </nav> 
                             <div class="container">
                        <h2>User Details</h2>
                             <?php
@@ -126,6 +147,7 @@
                         </tbody>
                       </table>
                         <div class="pagination">
+                            
                             <?php if($_GET['page'] != 1){ ?> 
                             <a href="viewuser.php?page=<?=$_GET['page']-1 ?>" >prev</a>
                           <?php } ?>
@@ -146,18 +168,6 @@
                       </div>
                     </div>
 
-                    <!--
-                       <div class="pagination">
-                      <a href="#">&laquo;</a>
-                      <a href="#" class="active">1</a>
-                      <a href="#" >2</a>
-                      <a href="#">3</a>
-                      <a href="#">4</a>
-                      <a href="#">5</a>
-                      <a href="#">6</a>
-                      <a href="#">&raquo;</a>
-                      </div>
-                    -->
                     </body>
                         <?php }else header("location:../index.php");?>
 

@@ -16,6 +16,26 @@ session_start();
                 margin-left: 90%;
             }
                
+               .btn{
+                   margin-top: 8px;
+                   margin-right: 10px;
+                   width: 200px;
+               }
+               .dropdown-menu{
+                   width: 200px;
+                  margin-right: 10px;
+                   text-align: center;
+               }
+               li a{
+                   font-family: "museo-sans", helvetica, sans-serif; 
+               }
+               .navbar-nav li a:hover, .navbar-nav li.active a{
+                    color:white
+                                        !important;
+                                    background-color: limegreen
+                                        !important;
+               }
+            
 .pagination {
     display: inline-block;
     margin-left: 30%;
@@ -39,14 +59,6 @@ session_start();
     background-color: #ddd;
     border-radius: 5px;
 }
-               .btn{
-                   margin-top: 8px;
-                   margin-right: 10px;
-               }
-               .dropdown-menu{
-                   width: 165px;
-                  margin-right: 10px;
-               }
 </style>
 </head>
 <body>
@@ -55,13 +67,13 @@ session_start();
   <div class="container-fluid">
    
 <ul class="nav navbar-nav">
-      <li class="active"><a href="navv1.php">Home</a></li>
-      <li class=""><a href="../viewuser.php">view user</a></li>
-        <li>  <a href="addemployee_1.php">Add Employee</a></li>
+      <li class="active" style="font-weight:bold;"><a  href="navv1.php">HOME</a></li>
+      <li class="" style="font-weight:bold;"><a href="../viewuser.php">VIEW USER</a></li>
+     <li style="font-weight:bold;"><a href="viewemployee.php">VIEW EMPLOYEE</a></li>
+        <li style="font-weight:bold;"><a href="addemployee_1.php">ADD EMPLOYEE</a></li>
+       
       </ul>
        <ul class="nav  navbar-right">
-      
-      
      <ul class="dropdown">
         <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown"><?php echo $_SESSION['flag'];?></button> 
            <ul class="dropdown-menu">
@@ -70,14 +82,15 @@ session_start();
            </ul>
     </ul>
       </div>
-   </nav> 
-
-<div class="container">
+   </nav>
+    
+    <div class="container">
     <div class="jumbotron">
           <h1>Welcome Admin</h1>
          
   </div>
 </div>
+<<<<<<< HEAD
  
 
     <div class="container">
@@ -181,6 +194,8 @@ mysqli_close($conn);
     </div>
     </div>
 
+=======
+>>>>>>> 0f98181f0d0fa9f82c71776a717c5a30515ddb9e
 
 </body>
     <?php }else header("location:index.php");?>
