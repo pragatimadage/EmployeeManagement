@@ -47,7 +47,7 @@
              margin-left: 50px;
          }
          .well{
-             background-color:gainsboro;
+             background-color:lightcyan;
          }
     </style>
 </head>
@@ -169,7 +169,24 @@
                   
               }
      });
-
+//       $(".no").keydown(function(){
+//        var key=event.which;
+//              // var z=/(7|8|9)\d{9}/;
+//              // var y=z.value();
+//
+//              if(key >=48 && key <= 57)
+//              {  
+//                return true;
+//                
+//                }
+//                  
+//              else
+//              {
+//                return false;
+//                
+//              }
+//           });
+      
   });
         $(document).ready(function(){
            var a=$("#name");

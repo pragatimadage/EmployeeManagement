@@ -12,6 +12,12 @@ session_start();
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
            <style>
+                .navbar{
+                                                  background-color:#062456;
+                                             }
+                                             body{
+                                                 background-color:aliceblue;
+                                             }
             #nav1{
                 margin-left: 90%;
             }
@@ -30,11 +36,23 @@ session_start();
                    font-family: "museo-sans", helvetica, sans-serif; 
                }
                .navbar-nav li a:hover{
-                    color:white
+                    color:black
                                         !important;
-                                    background-color: limegreen
+                                    background-color: #fcfcfc
                                         !important;
                }
+               .dropdown-menu{
+                                   margin-right: 10px; 
+                                     width: 200px;
+                                    text-align: center;
+                                    background-color:#fcfcfc;
+                                    border-radius: 15px;
+/*                                    color:white;*/
+                                    height:35px;
+                                    font-weight:bold;
+                                    font-family: font-family: "museo-sans", helvetica, sans-serif;
+                                   
+                                }
             
 .pagination {
     display: inline-block;
@@ -67,17 +85,17 @@ session_start();
   <div class="container-fluid">
    
 <ul class="nav navbar-nav">
-      <li class="active" style="font-weight:bold;"><a  href="navv1.php">HOME</a></li>
-      <li class="" style="font-weight:bold;"><a href="../viewuser.php">VIEW USER</a></li>
-     <li style="font-weight:bold;"><a href="viewemployee.php">VIEW EMPLOYEE</a></li>
-        <li style="font-weight:bold;"><a href="addemployee_1.php">ADD EMPLOYEE</a></li>
+      <li class="active"><a  href="navv1.php">HOME</a></li>
+      <li class=""><a href="../viewuser.php">VIEW USER</a></li>
+     <li ><a href="viewemployee.php">VIEW EMPLOYEE</a></li>
+        <li ><a href="addemployee_1.php">ADD EMPLOYEE</a></li>
       
       </ul>
        <ul class="nav  navbar-right">
      <ul class="dropdown">
-        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown"><?php echo $_SESSION['flag'];?></button> 
+        <button type="button" style="background-color:#fcfcfc; color:BLACK;border:1px solid skyblue;border-radius: 15px;  font-family: font-family: "museo-sans", helvetica, sans-serif;" class="btn btn-info dropdown-toggle" data-toggle="dropdown"><?php echo $_SESSION['flag'];?></button> 
            <ul class="dropdown-menu">
-               <li><a class="dropdown-item"  href="logout.php" onclick="return confirm('Do You Want To Logout?')">Logout</a></li>
+               <li><a  type="button" class="dropdown-item"  href="logout.php" onclick="return confirm('Do You Want To Logout?')">Logout</a></li>
         </ul>
            </ul>
     </ul>
@@ -85,10 +103,7 @@ session_start();
    </nav>
     
     <div class="container">
-    <div class="jumbotron">
-          <h1>Welcome Admin</h1>
-         
-  </div>
+ 
 </div>
       <div class="container">
                        <h2>User Details</h2>
@@ -136,8 +151,8 @@ mysqli_close($conn);
 
 <div class="container">
          
-  <table class="table" >
-    <thead>
+  <table class="table table-bordered table-hover" style="background-color:#F2EDED">
+    <thead style="background-color:gray; color:white;">
       <tr>
         <th>Srno.</th>
 <!--        <th>ID</th>-->
@@ -145,10 +160,7 @@ mysqli_close($conn);
         <th>ADDRESS</th>
         <th>CONTACT</th> 
         <th>SALARY</th> 
-        <th>IMAGE</th>
-          <th>DELETE</th>
-          <th>UPDATE</th>
-        
+        <th>Delete</th>
 
       </tr>
     </thead>
@@ -164,7 +176,6 @@ mysqli_close($conn);
 <!--        <td><a src="upload/$id<?php echo $row['id']?>.jpg" hieght="50" width="50"></a></td>-->
           <td><img src="Upload/<?php echo $row['id'];?>.jpg" height="50" width="50"></td>
 <td><a href="dbdlt.php?id=<?php echo $row['id']; ?>"onclick="return confirm('Do You Want to Delete?');">Delete</a></td>
-        <td><a href="Update.php ?id=<?php echo $row['id']?>">Update</a></td>  
       <?php } ?>
     </tbody>
   </table>

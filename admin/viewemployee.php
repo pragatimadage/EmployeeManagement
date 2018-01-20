@@ -12,6 +12,12 @@ session_start();
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
            <style>
+                       .navbar{
+                                                  background-color:#062456;
+                                             }
+                                             body{
+                                                 background-color:aliceblue;
+                                             }
             #nav1{
                 margin-left: 90%;
             }
@@ -19,9 +25,9 @@ session_start();
                    
                }
                .navbar-nav li a:hover,.navbar-nav li.active a{
-                                        color:white
+                                        color:black
                                         !important;
-                                    background-color: limegreen
+                                    background-color: #fcfcfc
                                         !important;
                }
                .nav{

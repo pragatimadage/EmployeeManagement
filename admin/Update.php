@@ -56,7 +56,7 @@
 include_once("connection.php");
 if(isset($_GET['id']))
 {
-echo $id=$_GET['id'];
+    $id=$_GET['id'];
  $sql="SELECT * FROM `add1` where id='$id'";
    $result = $conn->query($sql);
 $row = $result->fetch_assoc()
