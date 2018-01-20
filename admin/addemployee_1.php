@@ -30,7 +30,7 @@
                                 <h4 class="title">Add employee</h4>
                             </div>
                             <div class="content" >
-                                <form action="add.php" method="post">
+                                <form action="add.php" method="post" enctype="multipart/form-data">
                                     <div class="row" >
                                         <div class="col-md-12">
                                             <div class="form-group">
@@ -70,7 +70,15 @@
                                     </div>
                                    
                                     
-
+                                        <div class="row" >
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Image</label>
+                                                <input type="file" accesskey="image/*" name="pic" id="pic" placeholder="Picture" required>
+                                      
+                                        </div>
+                                 
+                                   
                                    
                                     <div class="text-center">
                                         <button type="submit" name="add" class="btn btn-info btn-fill btn-wd btn-block">Add</button>
@@ -81,12 +89,16 @@
 <!--                                        <button type="submit" name="add" class="btn btn-info btn-fill btn-wd btn-block"><a href="navv1.php">EXIT</a></button>-->
                                     </div>
                                     <div class="clearfix"></div>
+                                            </div>
+                                    </div>
                                 </form>
                             </div>
                            
                         </div>
+                            </div>
+                    </center> 
                     </div>
- </center>
+
 
                 </div>
             </div>
@@ -94,8 +106,8 @@
     </div>
 
        
-
-    </div>
+    
+    
     <script>
         
   $(document).ready(function(){

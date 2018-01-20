@@ -135,24 +135,25 @@ mysqli_close($conn);
         <th>ADDRESS</th>
         <th>CONTACT</th> 
         <th>SALARY</th> 
+         <th>IMAGE</th>  
         <th>Delete</th> 
 
       </tr>
     </thead>
-    <tbody>
+<tbody>
         <?php $i=0; while($row = $result->fetch_assoc()){ ?>
-      <tr>
+<tr>
           <td><?php $i++; echo $i; ?></td>
 <!--        <td><?php echo $row['id']; ?></td>-->
-        <td><?php echo $row['name']; ?></td>
-        <td><?php echo $row['address']; ?></td>
-        <td><?php echo $row['contact']; ?></td>
-        <td><?php echo $row['salary']; ?></td>
-
-          <td> <a href="dbdlt.php?id=<?php echo $row['id']; ?>" onclick="return confirm('Do you want to delete this ? ');">Delete</a></td>        
-        </tr>
+        <td><?php echo $row['name'];?></td>
+        <td><?php echo $row['address'];?></td>
+        <td><?php echo $row['contact'];?></td>
+        <td><?php echo $row['salary'];?></td>
+        <td><img src="Upload/<?php echo $row['id'];?>.jpg" height="50" width="50"></td>
+        <td> <a href="dbdlt.php?id=<?php echo $row['id']; ?>" onclick="return confirm('Do you want to delete this ? ');">Delete</a></td>        
+ </tr>
       <?php } ?>
-    </tbody>
+</tbody>
   </table>
     <div class="pagination">
          <?php if($_GET['page'] != 1){ ?> 

@@ -134,7 +134,7 @@ mysqli_close($conn);
 
 <div class="container">
          
-  <table class="table">
+  <table class="table" >
     <thead>
       <tr>
         <th>Srno.</th>

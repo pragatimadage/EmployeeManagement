@@ -86,7 +86,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Email</label>
-                                                <input type="email" name="email" id="email" class="form-control border-input"  placeholder="Email" >
+                                                <input type="email" name="email" id="email" class="form-control border-input"  placeholder="Email">
                                             </div>
                                         </div>
                                     </div>
