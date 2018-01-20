@@ -14,30 +14,62 @@
                       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
                       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
                             <style>
-                                
+                                /*  
+                                design for logout*/
+                                body{
+                                    background-color:#dcdcdc;
+/*                                     background-color:#4C4CA;*/
+                                }
+                                .navbar{
+                                    background-color:#062456;
+                                }
                                 .btn{
                                     margin-right: 10px;
                                     margin-top: 8px;
-                                    width: 200px;
+                                    width: 180px;
+                                color: white;
+/*                                    color:aqua*/
+/*                                    color:cornflowerblue;*/
+                                }
+                                .btn hover{
+                                    background-color: black;
+/*                                    coskybluelor:skyblue;*/
                                 }
                                 .dropdown-menu{
                                    margin-right: 10px; 
-                                     width: 200px;
+                                     width: 180px;
                                     text-align: center;
+                                    background-color:#fcfcfc;
+                                    border-radius: 15px;
+/*                                    color:white;*/
+                                    height:35px;
+                                    font-weight:bold;
+                                    font-family: font-family: "museo-sans", helvetica, sans-serif;
+                                   
+                                }
+                                .dropdown-menu li a:hover{
+/*                                    background-color:lightskyblue;*/
+/*                                    color:darkslategrey;*/
                                 }
                                 .navbar-nav li a{
                                    
                                     font-family: font-family: "museo-sans", helvetica, sans-serif;
                                     font-size:14px;
                                     letter-spacing: 2px;
+                                    margin-left: 50px;
                                }
                                 .navbar-nav li a:hover,.navbar-nav li.active a{
-                                    color: white 
+                                    color: BLACK
                                         !important;
-                                    background-color: limegreen 
+                                    background-color:#fcfcfc
                                         !important;
                                 }
-
+/*
+                                .card{
+                                    background-color:lawngreen;
+                                }
+*/
+                                
                     .pagination {
                         display: inline-block;
                         margin-left: 30%;
@@ -51,7 +83,7 @@
                     }
 
                     .pagination a.active {
-                        background-color: #4CAF50;
+                        background-color:grey;
                         color: white;
                         margin-left: 5px;
                         border-radius: 5px;
@@ -65,27 +97,31 @@
 
                     </head>
                         <body>
-                            <nav class="navbar navbar-inverse">
+                            <nav class="navbar navbar-default">
                       <div class="container-fluid">
                         <div class=" nav navbar-nav" >
-                          <li class="active"><a   href="">Home</a></li>
+                          <li class="active"><a href="">Home</a></li>
                         </div>
                               <ul class="nav  navbar-right">
       
-                                 <nav aria-label="...">
+                                
                                  <ul class="dropdown">
-                                    <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown"><?php echo $_SESSION['flag'];?></button> 
+                                    <button type="button" style="background-color:#fcfcfc; color:BLACK;border:1px solid skyblue;border-radius: 15px;  font-family: font-family: "museo-sans", helvetica, sans-serif;" class="btn   dropdown-toggle" data-toggle="dropdown"><?php echo $_SESSION['flag'];?></button> 
                                         <ul class="dropdown-menu">
-                                                <li><a class="dropdown-item"  href="logout.php" onclick="return confirm('Do You Want To Logout?')">Logout</a></li>
+                                            <li><a type="buttton" class="dropdown-item"  href="logout.php" onclick="return confirm('Do You Want To Logout?')">Logout</a></li>
                                         </ul>
                                        </ul>
-                                  </nav>
+                                  
                                 </ul>
                                 </div>
 
                             </nav>
                             <div class="container">
-                       <h2>User Details</h2>
+                                <center>
+                                   <h3>USER DETAILS</h3>
+                                </center>
+                                <BR/>
+                                <BR/>
                             <?php
                     $servername = "localhost";
                     $username = "root";
@@ -128,17 +164,20 @@
                     ?>
                     </div>
                     <div class="container">
-
-                      <table class="table">
-                        <thead>
+<!--                     <div class="card">-->
+                          
+                         <div class="card" style="background-color:aliceblue;">
+                           
+                      <table class="table table-bordered table-hover" style="background-color:#F2EDED" >
+                       <thead style="background-color:gray; color:white;">
                           <tr>
-                            <th>Srno.</th>
+                            <th>SR NO.</th>
 <!--                            <th>ID</th>-->
                             <th>NAME</th>
-                            <th>Email</th>
-                            <th>Mobile</th> 
-                            <th>Gender</th> 
-                            <th>Delete</th> 
+                            <th>EMAIL</th>
+                            <th>MOBILE</th> 
+                            <th>GENDER</th> 
+                            <th>DELETE</th> 
                           </tr>
                         </thead>
                         <tbody>
@@ -156,8 +195,11 @@
                           <?php } ?>
                         </tbody>
                       </table>
+<!--                    </div>-->
+                                 
+                          </div>
                         <div class="pagination">
-                            
+                             <center>
                             <?php if($_GET['page'] != 1){ ?> 
                             <a href="navv.php?page=<?=$_GET['page']-1 ?>" >prev</a>
                           <?php } ?>
@@ -175,21 +217,23 @@
                              <?php if($_GET['page'] != $p){ ?>
                             <a href="navv.php?page=<?=$_GET['page']+1 ?>">next</a>
                             <?php } ?>
+                         </center>
                       </div>
+                      
                     </div>
-
-                    <!--
-                       <div class="pagination">
-                      <a href="#">&laquo;</a>
-                      <a href="#" class="active">1</a>
-                      <a href="#" >2</a>
-                      <a href="#">3</a>
-                      <a href="#">4</a>
-                      <a href="#">5</a>
-                      <a href="#">6</a>
-                      <a href="#">&raquo;</a>
-                      </div>
-                    -->
+<!--
+                            <div class="card" style="width=400px;height=200px;">
+                                jhkjg
+                            </div>
+-->
+<!--
+                        <div class="container">
+                            
+                             <div class="card" style="background-color:gray;">
+                            <div class="card-body">Basic card</div>
+                          </div>
+                        </div>
+-->
                     </body>
                         <?php }else header("location:../index.php");?>
 

@@ -15,6 +15,12 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/js/select2.min.js"></script>
      <style>
+         .navbar{
+              background-color:#062456;
+         }
+         body{
+             background-color:aliceblue;
+         }
          .navbar-nav li a{
                         
                                     font-family: font-family: "museo-sans", helvetica, sans-serif;
@@ -29,9 +35,9 @@
                  ! important;
          } 
          .navbar-nav li.active a{
-             background-color: limegreen 
+             background-color: #fcfcfc
                  ! important;
-             color: white
+             color: black
                  ! important;
          }
          .btn{
@@ -40,18 +46,18 @@
          #pic{
              margin-left: 50px;
          }
-/*
          .well{
-             background-color:lightgrey;
+             background-color:gainsboro;
          }
-*/
     </style>
 </head>
 <body>
 <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
     <ul class="nav navbar-nav">
         <li class="active"><a href="navv1.php">HOME</a></li>
     </ul>
+    </div>
     </nav>
 <div class="wrapper">
 	<div class="content">
@@ -71,7 +77,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                     <label>NAME</label>
-                                                <input type="text" name="name" id="name" class="form-control border-input name" placeholder="Employee Name" required>
+                                                <input type="text" name="name" id="name" class="form-control" placeholder="Employee Name" required>
                                             </div>
                                         </div>
                                     </div>
@@ -115,7 +121,7 @@
                                    
                                    
                                     <div class="text-center">
-                                        <button type="submit" name="add" class="btn btn-info btn-fill btn-wd ">Add</button>
+                                        <button type="submit" name="add" class="btn btn-info btn-fill btn-wd ">ADD</button>
                                         <a href="navv1.php" type="button" class="btn btn-info btn-fill btn-wd ">EXIT</a>
                                     </div>
                                     <br/>

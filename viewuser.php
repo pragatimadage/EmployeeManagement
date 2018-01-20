@@ -119,8 +119,8 @@
                     </div>
                     <div class="container">
 
-                      <table class="table">
-                        <thead>
+                      <table class="table table-bordered table-hover table-striped">
+                        <thead style="background-color:lightgray">
                           <tr>
                             <th>Srno.</th>
 <!--                            <th>ID</th>-->

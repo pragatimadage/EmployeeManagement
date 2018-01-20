@@ -18,6 +18,11 @@ if(isset($_SESSION['flag']))
     <title>Login</title>
     <link rel="stylesheet" href="login_assets/css/bootstrap.min.css" type="text/css"/>
     <link rel="stylesheet" href="login_assets/css/style.css" type="text/css"/>
+    <style>
+        body{
+            background-color: lightgray;
+        }
+    </style>
 </head>
 <body>
 
@@ -28,11 +33,14 @@ if(isset($_SESSION['flag']))
         <form method="post" action="loginfetch.php">
 
             <div class="col-md-12">
-
+                 <br/>
+                 <br/>
                 <div class="form-group">
-                    <h2 class="">PeaceInfotech Solution:</h2>
+                    <center>
+                    <h3 class="">LOGIN</h3>
+                    </center>
                 </div>
-
+                 <div class="well">
                 <div class="form-group">
                     <hr/>
                 </div>
@@ -68,6 +76,7 @@ if(isset($_SESSION['flag']))
                 <div class="form-group">
                     <a href="register.php" type="button" class="btn btn-block btn-danger"
                        name="login">Register</a>
+                    </div>
                 </div>
 
             </div>

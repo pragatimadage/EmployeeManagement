@@ -31,6 +31,7 @@ session_start();
                    margin-top: 8px;
                    margin-right: 10px;
                     width: 200px;
+                    background-color: black;
                }
                .dropdown-menu{
                    width: 200px;
@@ -69,23 +70,22 @@ session_start();
 </style>
 </head>
 <body>
-
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
    
 <ul class="nav navbar-nav">
       <li class="active"><a href="navv1.php">HOME</a></li>
    </ul>
+<!--
        <ul class="nav  navbar-right">
-      
-      
-     <ul class="dropdown">
-        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown"><?php echo $_SESSION['flag'];?></button> 
+       <ul class="dropdown">
+        <button type="button" style="background-color:black;color:white;border:1px solid skyblue;" class="btn  dropdown-toggle" data-toggle="dropdown"><?php echo $_SESSION['flag'];?></button> 
            <ul class="dropdown-menu">
                <li><a class="dropdown-item"  href="logout.php" onclick="return confirm('Do You Want To Logout?')">Logout</a></li>
         </ul>
            </ul>
     </ul>
+-->
       </div>
    </nav> 
 <div class="container">
@@ -104,8 +104,7 @@ if ($conn->connect_error)
  if(isset($_GET['page']))
     {
       $paa = $_GET['page'];
-
-   }
+ }
    else
    {    
        $_GET['page']=1;
@@ -134,8 +133,8 @@ mysqli_close($conn);
 
 <div class="container">
          
-  <table class="table">
-    <thead>
+  <table class="table table-bordered table-hover table-striped">
+    <thead style="background-color:lightgray">
       <tr>
         <th>Srno.</th>
 <!--        <th>ID</th>-->
