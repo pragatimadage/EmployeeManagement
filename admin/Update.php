@@ -52,14 +52,23 @@
                         <div class="card">
                             <div class="header">
                                 <h4 class="title" style="font-weight:bold;">ADD EMPLOYEE</h4>
-                            </div>
+                                <?php
+include_once("connection.php");
+if(isset($_GET['id']))
+{
+echo $id=$_GET['id'];
+ $sql="SELECT * FROM `add1` where id='$id'";
+   $result = $conn->query($sql);
+$row = $result->fetch_assoc()
+                                ?> </div>
                             <div class="content" >
-                                <form action="add.php" method="post" enctype="multipart/form-data">
+                                <form action="Update_db.php" method="post" enctype="multipart/form-data">
                                     <div class="row" >
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                     <label>NAME</label>
-                                                <input type="text" name="name" id="name" class="form-control border-input name" placeholder="Employee Name" required>
+                                                <input type="text" name="name" id="name" class="form-control border-input name" Value="<?php echo $row['name']?>" required>
+                                                <input type="hidden" name="id" value="<?php echo $id?>">
                                             </div>
                                         </div>
                                     </div>
@@ -67,7 +76,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>ADDRESS</label>
-                                                <input type="text" name="address" id="address" class="form-control border-input name" placeholder="Address" required>
+                                                <input type="text" name="address" id="address" class="form-control border-input name" Value="<?php echo $row['address'];?>" required>
                                             </div>
                                         </div>
                                     </div>
@@ -75,7 +84,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                <label>MOBILE NO</label>
-                                                <input type="text" name="mobile" id="no" class="form-control border-input no" placeholder="Mobile No" maxlength="10" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')" required>
+                                                <input type="text" name="mobile" id="no" class="form-control border-input no" Value="<?php echo $row['contact'];?>" maxlength="10" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')" required>
 
                                                 
                                             </div>
@@ -85,7 +94,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>SALARY</label>
-                                                <input type="text" name="salary" id="salary" class="form-control border-input no" placeholder="Salary" onkeyup="if (/\D/g.test(salary.value)) salary.value = salary.value.replace(/\D/g,'')" required>
+                                                <input type="text" name="salary" id="salary" class="form-control border-input no" Value="<?php echo $row['salary'];?>" onkeyup="if (/\D/g.test(salary.value)) salary.value = salary.value.replace(/\D/g,'')" required>
                                             </div>
                                         </div>
                                     </div>
@@ -98,11 +107,11 @@
                                                 <input type="file"  accesskey="image/*" name="pic" id="pic" placeholder="Picture" required>
                                       
                                         </div>
-                                 
+                                 <?php }?>
                                    
                                    
                                     <div class="text-center">
-                                        <button type="submit" name="add" class="btn btn-info btn-fill btn-wd btn-block">Add</button>
+                                        <button type="submit" name="add" class="btn btn-info btn-fill btn-wd btn-block">Update</button>
                                     </div>
                                     <br/>
                                     <div class="text-center">
