@@ -15,12 +15,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/js/select2.min.js"></script>
      <style>
-         .navbar{
-              background-color:#062456;
-         }
-         body{
-             background-color:aliceblue;
-         }
          .navbar-nav li a{
                         
                                     font-family: font-family: "museo-sans", helvetica, sans-serif;
@@ -35,49 +29,46 @@
                  ! important;
          } 
          .navbar-nav li.active a{
-             background-color: #fcfcfc
+             background-color: limegreen 
                  ! important;
-             color: black
+             color: white
                  ! important;
-         }
-         .btn{
-             width: 142px;
-         }
-         #pic{
-             margin-left: 50px;
-         }
-         .well{
-             background-color:gainsboro;
          }
     </style>
 </head>
 <body>
 <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
     <ul class="nav navbar-nav">
         <li class="active"><a href="navv1.php">HOME</a></li>
     </ul>
-    </div>
     </nav>
 <div class="wrapper">
 	<div class="content">
             <div class="container-fluid">
-              <div class="card">
+              
                 <div class="row">
                     <center>
                     <div class="col-md-offset-4 col-lg-3" align="center">
                         <div class="card">
-                            <div class="well">
                             <div class="header">
                                 <h4 class="title" style="font-weight:bold;">ADD EMPLOYEE</h4>
-                            </div>
+                                <?php
+include_once("connection.php");
+if(isset($_GET['id']))
+{
+echo $id=$_GET['id'];
+ $sql="SELECT * FROM `add1` where id='$id'";
+   $result = $conn->query($sql);
+$row = $result->fetch_assoc()
+                                ?> </div>
                             <div class="content" >
-                                <form action="add.php" method="post" enctype="multipart/form-data">
+                                <form action="Update_db.php" method="post" enctype="multipart/form-data">
                                     <div class="row" >
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                     <label>NAME</label>
-                                                <input type="text" name="name" id="name" class="form-control" placeholder="Employee Name" required>
+                                                <input type="text" name="name" id="name" class="form-control border-input name" Value="<?php echo $row['name']?>" required>
+                                                <input type="hidden" name="id" value="<?php echo $id?>">
                                             </div>
                                         </div>
                                     </div>
@@ -85,7 +76,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>ADDRESS</label>
-                                                <input type="text" name="address" id="address" class="form-control border-input name" placeholder="Address" required>
+                                                <input type="text" name="address" id="address" class="form-control border-input name" Value="<?php echo $row['address'];?>" required>
                                             </div>
                                         </div>
                                     </div>
@@ -93,7 +84,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                <label>MOBILE NO</label>
-                                                <input type="text" name="mobile" id="no" class="form-control border-input no" placeholder="Mobile No" maxlength="10" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')" required>
+                                                <input type="text" name="mobile" id="no" class="form-control border-input no" Value="<?php echo $row['contact'];?>" maxlength="10" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')" required>
 
                                                 
                                             </div>
@@ -103,7 +94,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>SALARY</label>
-                                                <input type="text" name="salary" id="salary" class="form-control border-input no" placeholder="Salary" onkeyup="if (/\D/g.test(salary.value)) salary.value = salary.value.replace(/\D/g,'')" required>
+                                                <input type="text" name="salary" id="salary" class="form-control border-input no" Value="<?php echo $row['salary'];?>" onkeyup="if (/\D/g.test(salary.value)) salary.value = salary.value.replace(/\D/g,'')" required>
                                             </div>
                                         </div>
                                     </div>
@@ -114,23 +105,19 @@
                                             <div class="form-group">
                                                 <label>IMAGE</label>
                                                 <input type="file"  accesskey="image/*" name="pic" id="pic" placeholder="Picture" required>
-                                                
                                       
                                         </div>
-                                 
+                                 <?php }?>
                                    
                                    
                                     <div class="text-center">
-                                        <button type="submit" name="add" class="btn btn-info btn-fill btn-wd ">ADD</button>
-                                        <a href="navv1.php" type="button" class="btn btn-info btn-fill btn-wd ">EXIT</a>
+                                        <button type="submit" name="add" class="btn btn-info btn-fill btn-wd btn-block">Update</button>
                                     </div>
                                     <br/>
-<!--
                                     <div class="text-center">
                                         <a href="navv1.php" type="button" class="btn btn-info btn-fill btn-wd btn-block">EXIT</a>
-                                        <button type="submit" name="add" class="btn btn-info btn-fill btn-wd btn-block"><a href="navv1.php">EXIT</a></button>
+<!--                                        <button type="submit" name="add" class="btn btn-info btn-fill btn-wd btn-block"><a href="navv1.php">EXIT</a></button>-->
                                     </div>
--->
                                     <div class="clearfix"></div>
                                             </div>
                                     </div>
@@ -139,14 +126,12 @@
                            
                         </div>
                             </div>
-                            </div>
                     </center> 
                     </div>
 
 
                
             </div>
-                </div> 
         </div>
     </div>
 

@@ -145,7 +145,10 @@ mysqli_close($conn);
         <th>ADDRESS</th>
         <th>CONTACT</th> 
         <th>SALARY</th> 
-        <th>Delete</th>
+        <th>IMAGE</th>
+          <th>DELETE</th>
+          <th>UPDATE</th>
+        
 
       </tr>
     </thead>
@@ -161,6 +164,7 @@ mysqli_close($conn);
 <!--        <td><a src="upload/$id<?php echo $row['id']?>.jpg" hieght="50" width="50"></a></td>-->
           <td><img src="Upload/<?php echo $row['id'];?>.jpg" height="50" width="50"></td>
 <td><a href="dbdlt.php?id=<?php echo $row['id']; ?>"onclick="return confirm('Do You Want to Delete?');">Delete</a></td>
+        <td><a href="Update.php ?id=<?php echo $row['id']?>">Update</a></td>  
       <?php } ?>
     </tbody>
   </table>
