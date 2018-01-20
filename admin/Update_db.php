@@ -12,7 +12,7 @@ include_once("connection.php");
     $id=uniqid();
     file_put_contents("Upload/$id.jpg",$upload);
        
- $id= $_POST['id'];
+$id= $_POST['id'];
 $name= $_POST['name'];
 $addr= $_POST['address'];
 $cont= $_POST['mobile'];
