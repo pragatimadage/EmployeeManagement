@@ -14,7 +14,7 @@ if ($conn->connect_error)
      $tmp=$_FILES["pic"]["tmp_name"];
      $upload=file_get_contents($tmp);
      $id=uniqid();
-     file_put_contents("upload/$id.jpg",$upload);
+     file_put_contents("Upload/$id.jpg",$upload);
 $name= $_POST['name'];
 $addr= $_POST['address'];
 $cont= $_POST['mobile'];
