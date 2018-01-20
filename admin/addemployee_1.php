@@ -47,7 +47,7 @@
              margin-left: 50px;
          }
          .well{
-             background-color:lightgrey;
+             background-color:	#F0F0F0;
          }
     </style>
 </head>
