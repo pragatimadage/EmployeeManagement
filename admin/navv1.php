@@ -29,7 +29,7 @@ session_start();
                li a{
                    font-family: "museo-sans", helvetica, sans-serif; 
                }
-               .navbar-nav li a:hover, .navbar-nav li.active a{
+               .navbar-nav li a:hover{
                     color:white
                                         !important;
                                     background-color: limegreen
@@ -67,11 +67,11 @@ session_start();
   <div class="container-fluid">
    
 <ul class="nav navbar-nav">
-      <li class="active" ><a  href="navv1.php">HOME</a></li>
-      <li class="" ><a href="../viewuser.php">VIEW USER</a></li>
-     <li ><a href="viewemployee.php">VIEW EMPLOYEE</a></li>
-        <li><a href="addemployee_1.php">ADD EMPLOYEE</a></li>
-       
+      <li class="active" style="font-weight:bold;"><a  href="navv1.php">HOME</a></li>
+      <li class="" style="font-weight:bold;"><a href="../viewuser.php">VIEW USER</a></li>
+     <li style="font-weight:bold;"><a href="viewemployee.php">VIEW EMPLOYEE</a></li>
+        <li style="font-weight:bold;"><a href="addemployee_1.php">ADD EMPLOYEE</a></li>
+      
       </ul>
        <ul class="nav  navbar-right">
      <ul class="dropdown">

@@ -39,7 +39,7 @@ session_start();
                }
                .active{
                    font-family: "museo-sans", helvetica, sans-serif; 
-                   font-weight: bold;
+                   
                }
                
 .pagination {

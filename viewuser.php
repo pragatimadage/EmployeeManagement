@@ -19,7 +19,7 @@
                                 }
                       .nav li a{
                          font-family: "museo-sans", helvetica, sans-serif; 
-                         font-weight:bold;
+                        
                          }
                                 .navbar-nav li a:hover{
                                      color:white

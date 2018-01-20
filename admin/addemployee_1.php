@@ -34,6 +34,17 @@
              color: white
                  ! important;
          }
+         .btn{
+             width: 142px;
+         }
+         #pic{
+             margin-left: 50px;
+         }
+/*
+         .well{
+             background-color:lightgrey;
+         }
+*/
     </style>
 </head>
 <body>
@@ -45,11 +56,12 @@
 <div class="wrapper">
 	<div class="content">
             <div class="container-fluid">
-              
+              <div class="card">
                 <div class="row">
                     <center>
                     <div class="col-md-offset-4 col-lg-3" align="center">
                         <div class="card">
+                            <div class="well">
                             <div class="header">
                                 <h4 class="title" style="font-weight:bold;">ADD EMPLOYEE</h4>
                             </div>
@@ -96,19 +108,23 @@
                                             <div class="form-group">
                                                 <label>IMAGE</label>
                                                 <input type="file"  accesskey="image/*" name="pic" id="pic" placeholder="Picture" required>
+                                                
                                       
                                         </div>
                                  
                                    
                                    
                                     <div class="text-center">
-                                        <button type="submit" name="add" class="btn btn-info btn-fill btn-wd btn-block">Add</button>
+                                        <button type="submit" name="add" class="btn btn-info btn-fill btn-wd ">Add</button>
+                                        <a href="navv1.php" type="button" class="btn btn-info btn-fill btn-wd ">EXIT</a>
                                     </div>
                                     <br/>
+<!--
                                     <div class="text-center">
                                         <a href="navv1.php" type="button" class="btn btn-info btn-fill btn-wd btn-block">EXIT</a>
-<!--                                        <button type="submit" name="add" class="btn btn-info btn-fill btn-wd btn-block"><a href="navv1.php">EXIT</a></button>-->
+                                        <button type="submit" name="add" class="btn btn-info btn-fill btn-wd btn-block"><a href="navv1.php">EXIT</a></button>
                                     </div>
+-->
                                     <div class="clearfix"></div>
                                             </div>
                                     </div>
@@ -117,12 +133,14 @@
                            
                         </div>
                             </div>
+                            </div>
                     </center> 
                     </div>
 
 
                
             </div>
+                </div> 
         </div>
     </div>
 
