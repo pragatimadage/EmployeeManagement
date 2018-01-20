@@ -99,7 +99,7 @@
                       if(isset($_GET['page'])){
                             $paa = $_GET['page'];
 
-<<<<<<< HEAD
+
 if(isset($_GET['page']))
     {
       $paa = $_GET['page'];
