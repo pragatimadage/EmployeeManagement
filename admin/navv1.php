@@ -194,8 +194,7 @@ mysqli_close($conn);
     </div>
     </div>
 
-=======
->>>>>>> 0f98181f0d0fa9f82c71776a717c5a30515ddb9e
+
 
 </body>
     <?php }else header("location:index.php");?>
