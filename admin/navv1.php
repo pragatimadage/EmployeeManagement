@@ -63,20 +63,7 @@ session_start();
                                     font-family: font-family: "museo-sans", helvetica, sans-serif;
                                    
                                 }
-/*
-               #search{
-                   width: 150%;
-                   background-position: 10px 10px;
-                   background-repeat: no-repeat;
-                   font-size: 16px;
-                   padding: 10px 20px 10px 30px;
-                   border: 1px solid #ddd;
-                   margin-bottom: 12px;
-                   float: right;
-                   border-radius: 20px;
-               }
-*/
-/*
+            
     input[type=text] {
         
     width: 500px;
@@ -107,7 +94,6 @@ session_start();
         padding: 9px 8px;
       
     }               
-*/
 
 .pagination {
     display: inline-block;
@@ -157,43 +143,13 @@ session_start();
       </div>
    </nav>
          <div  class="container">
-<!--
          <div class="InputWithIcon">
                     <input type="text" id="search" name="search" placeholder="Search..">
                     <i class="fa fa-search fa-lg fa-fw" aria-hidden="true"></i>
         </div>
--->
         </div>
-<!--
-        <div  class="container">
-         <input class="mainLoginInput" type="text" placeholder="&#61442;"/> <br/>
-        
--->
-     
   
-<!--
-     <script>
-        $("#search").on("keyup", function() {
-         var value = $(this).val();
-
-       $("table tr").each(function(index) {
-        if (index !== 0) {
-
-            $row = $(this);
-
-            var id = $row.find("td:second").text();
-
-            if (id.indexOf(value) !== 0) {
-                $row.hide();
-            }
-            else {
-                $row.show();
-            }
-        }
-    });
-});
-            </script>
--->
+          
     <br/>
     <br/>
     <div class="container">
