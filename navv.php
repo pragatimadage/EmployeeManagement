@@ -90,7 +90,7 @@
                     }
 
                     .pagination a:hover {
-                        background-color: #ddd;
+                        background-color: black;
                         border-radius: 5px;
                     }
                     </style>

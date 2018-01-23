@@ -11,13 +11,20 @@ session_start();
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
            <style>
+               
                 .navbar{
                                                   background-color:#062456;
+/*                    font-weight: 500;*/
                                              }
+               .navbar-nav li a{
+/*                   font-weight: 500;*/
+               }
                                              body{
-                                                 background-color:aliceblue;
-                                             }
+                                    background-color:#dcdcdc;
+/*                                     background-color:#4C4CA;*/
+                                }
             #nav1{
                 margin-left: 90%;
             }
@@ -31,6 +38,7 @@ session_start();
                    width: 200px;
                   margin-right: 10px;
                    text-align: center;
+                 
                }
                li a{
                    font-family: "museo-sans", helvetica, sans-serif; 
@@ -53,7 +61,52 @@ session_start();
                                     font-family: font-family: "museo-sans", helvetica, sans-serif;
                                    
                                 }
-            
+/*
+               #search{
+                   width: 150%;
+                   background-position: 10px 10px;
+                   background-repeat: no-repeat;
+                   font-size: 16px;
+                   padding: 10px 20px 10px 30px;
+                   border: 1px solid #ddd;
+                   margin-bottom: 12px;
+                   float: right;
+                   border-radius: 20px;
+               }
+*/
+/*
+    input[type=text] {
+        
+    width: 500px;
+    box-sizing: border-box;
+    border: 0px solid #ccc;
+    border-radius: 20px;
+    font-size: 14px;
+    background-color: white;
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+         outline: none;
+}
+.InputWithIcon input[type=text]{
+       padding-left: 40px; 
+    
+    }
+    .InputWithIcon{
+        position: relative;
+        float: right;
+    }
+    .InputWithIcon i{
+        position:absolute;
+        left:0;
+        top:8px;
+        padding: 9px 8px;
+      
+    }               
+*/
+
 .pagination {
     display: inline-block;
     margin-left: 30%;
@@ -67,14 +120,14 @@ session_start();
 }
 
 .pagination a.active {
-    background-color: #4CAF50;
+    background-color: grey;
     color: white;
     border-radius: 5px;
     margin-right: 5px;
 }
 
 .pagination a:hover{
-    background-color: #ddd;
+    background-color: black;
     border-radius: 5px;
 }
 </style>
@@ -101,12 +154,50 @@ session_start();
     </ul>
       </div>
    </nav>
-    
+         <div  class="container">
+<!--
+         <div class="InputWithIcon">
+                    <input type="text" id="search" name="search" placeholder="Search..">
+                    <i class="fa fa-search fa-lg fa-fw" aria-hidden="true"></i>
+        </div>
+-->
+        </div>
+<!--
+        <div  class="container">
+         <input class="mainLoginInput" type="text" placeholder="&#61442;"/> <br/>
+        
+-->
+     
+  
+<!--
+     <script>
+        $("#search").on("keyup", function() {
+         var value = $(this).val();
+
+       $("table tr").each(function(index) {
+        if (index !== 0) {
+
+            $row = $(this);
+
+            var id = $row.find("td:second").text();
+
+            if (id.indexOf(value) !== 0) {
+                $row.hide();
+            }
+            else {
+                $row.show();
+            }
+        }
+    });
+});
+            </script>
+-->
+    <br/>
+    <br/>
     <div class="container">
- 
-</div>
-      <div class="container">
-                       <h2>User Details</h2>
+        
+                       <h3><CENTER>Employee  Details</CENTER></h3>
+        <br/>
                             <?php
                     $servername = "localhost";
                     $username = "root";
@@ -151,7 +242,7 @@ mysqli_close($conn);
 
 <div class="container">
          
-  <table class="table table-bordered table-hover" style="background-color:#F2EDED">
+  <table id="table1" class="table table-bordered table-hover" style="background-color:#F2EDED;"  >
     <thead style="background-color:gray; color:white;">
       <tr>
         <th>Srno.</th>
@@ -160,7 +251,10 @@ mysqli_close($conn);
         <th>ADDRESS</th>
         <th>CONTACT</th> 
         <th>SALARY</th> 
-        <th>Delete</th>
+        <th>IMAGE</th>
+          <th>DELETE</th>
+          <th>UPDATE</th>
+        
 
       </tr>
     </thead>
@@ -176,6 +270,7 @@ mysqli_close($conn);
 <!--        <td><a src="upload/$id<?php echo $row['id']?>.jpg" hieght="50" width="50"></a></td>-->
           <td><img src="Upload/<?php echo $row['id'];?>.jpg" height="50" width="50"></td>
 <td><a href="dbdlt.php?id=<?php echo $row['id']; ?>"onclick="return confirm('Do You Want to Delete?');">Delete</a></td>
+        <td><a href="Update.php ?id=<?php echo $row['id']?>">Update</a></td>  
       <?php } ?>
     </tbody>
   </table>
@@ -210,3 +305,4 @@ mysqli_close($conn);
     <?php }else header("location:index.php");?>
 
 </html>
+

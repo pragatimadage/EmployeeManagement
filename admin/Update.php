@@ -15,6 +15,12 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/js/select2.min.js"></script>
      <style>
+         .navbar{
+                                                  background-color:#062456;
+                                             }
+                                                   body{
+                                    background-color:#dcdcdc;
+                             }
          .navbar-nav li a{
                         
                                     font-family: font-family: "museo-sans", helvetica, sans-serif;
@@ -23,16 +29,25 @@
               margin-left: 70px;
          } 
          .navbar-nav li a:hover{
-             background-color: limegreen 
+             background-color:#fcfcfc
                  ! important;
-             color: white
+             color: black
                  ! important;
          } 
          .navbar-nav li.active a{
-             background-color: limegreen 
+             background-color: #fcfcfc
                  ! important;
-             color: white
+             color: black
                  ! important;
+         }
+         .btn{
+             width: 140px;
+         }
+         #pic{
+             margin-left:60px;
+         }
+         .well{
+            background-color:#F0F0F0;
          }
     </style>
 </head>
@@ -50,8 +65,9 @@
                     <center>
                     <div class="col-md-offset-4 col-lg-3" align="center">
                         <div class="card">
+                            <div class="well">
                             <div class="header">
-                                <h4 class="title" style="font-weight:bold;">ADD EMPLOYEE</h4>
+                                <h4 class="title" style="font-weight:bold;">UPDATE EMPLOYEE</h4>
                                 <?php
 include_once("connection.php");
 if(isset($_GET['id']))
@@ -111,13 +127,16 @@ $row = $result->fetch_assoc()
                                    
                                    
                                     <div class="text-center">
-                                        <button type="submit" name="add" class="btn btn-info btn-fill btn-wd btn-block">Update</button>
+                                        <button type="submit" name="add" class="btn btn-info btn-fill btn-wd ">UPDATE</button>
+                                        <a href="navv1.php" type="button" class="btn btn-info btn-fill btn-wd ">EXIT</a>
                                     </div>
                                     <br/>
+<!--
                                     <div class="text-center">
-                                        <a href="navv1.php" type="button" class="btn btn-info btn-fill btn-wd btn-block">EXIT</a>
-<!--                                        <button type="submit" name="add" class="btn btn-info btn-fill btn-wd btn-block"><a href="navv1.php">EXIT</a></button>-->
+                                        
+                                        <button type="submit" name="add" class="btn btn-info btn-fill btn-wd btn-block"><a href="navv1.php">EXIT</a></button>
                                     </div>
+-->
                                     <div class="clearfix"></div>
                                             </div>
                                     </div>
@@ -125,6 +144,7 @@ $row = $result->fetch_assoc()
                             </div>
                            
                         </div>
+                            </div>
                             </div>
                     </center> 
                     </div>

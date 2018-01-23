@@ -15,9 +15,10 @@ session_start();
                        .navbar{
                                                   background-color:#062456;
                                              }
-                                             body{
-                                                 background-color:aliceblue;
-                                             }
+                                                           body{
+                                    background-color:#dcdcdc;
+/*                                     background-color:#4C4CA;*/
+                                }
             #nav1{
                 margin-left: 90%;
             }
@@ -62,14 +63,14 @@ session_start();
 }
 
 .pagination a.active {
-    background-color: #4CAF50;
+    background-color:gray;
     color: white;
     border-radius: 5px;
     margin-right: 5px;
 }
 
 .pagination a:hover{
-    background-color: #ddd;
+    background-color: black;
     border-radius: 5px;
 }
               
@@ -139,8 +140,8 @@ mysqli_close($conn);
 
 <div class="container">
          
-  <table class="table table-bordered table-hover table-striped">
-    <thead style="background-color:lightgray">
+  <table class="table table-bordered table-hover" style="background-color:#F2EDED" >
+    <thead style="background-color:gray; color:white;">
       <tr>
         <th>Srno.</th>
 <!--        <th>ID</th>-->

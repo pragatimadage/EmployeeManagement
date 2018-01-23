@@ -18,9 +18,9 @@
          .navbar{
               background-color:#062456;
          }
-         body{
-             background-color:aliceblue;
-         }
+                                    body{
+                                    background-color:#dcdcdc;
+                             }
          .navbar-nav li a{
                         
                                     font-family: font-family: "museo-sans", helvetica, sans-serif;
@@ -48,6 +48,7 @@
          }
          .well{
              background-color:	#F0F0F0;
+/*             background-color:lightgray;*/
          }
     </style>
 </head>
