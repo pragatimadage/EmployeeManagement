@@ -15,11 +15,12 @@
                       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
                             <style>
                                  .navbar{
-              background-color:#062456;
-         }
-         body{
-             background-color:aliceblue;
-         }
+                                          background-color:#062456;
+                                     }
+                                     body{
+                                    background-color:#dcdcdc;
+/*                                     background-color:#4C4CA;*/
+                                }
                                 .navbar-nav li a{
                                     margin-left: 70px;
                                 }
@@ -54,14 +55,14 @@
                     }
 
                     .pagination a.active {
-                        background-color: #4CAF50;
+                        background-color:gray;
                         color: white;
                         margin-left: 5px;
                         border-radius: 5px;
                     }
 
                     .pagination a:hover {
-                        background-color: #ddd;
+                        background-color:black;
                         border-radius: 5px;
                     }
                     </style>
@@ -126,8 +127,8 @@
                     </div>
                     <div class="container">
 
-                      <table class="table table-bordered table-hover" style="background-color:#F2EDED">
-                        <thead style="background-color:lightgray">
+                      <table class="table table-bordered table-hover" style="background-color:#F2EDED" >
+                        <thead style="background-color:gray; color:white;">
                           <tr>
                             <th>Srno.</th>
 <!--                            <th>ID</th>-->
