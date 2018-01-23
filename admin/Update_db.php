@@ -7,10 +7,7 @@ include_once("connection.php");
    if(isset($_POST['add']))
      {
        
-     $tmp=$_FILES["pic"]["tmp_name"];
-    $upload=file_get_contents($tmp);
-    $id=uniqid();
-    file_put_contents("Upload/$id.jpg",$upload);
+    
        
 $id= $_POST['id'];
 $name= $_POST['name'];
@@ -18,9 +15,12 @@ $addr= $_POST['address'];
 $cont= $_POST['mobile'];
 $sal = $_POST['salary'];
         
-        
+   $tmp=$_FILES["pic"]["tmp_name"];
+    $upload=file_get_contents($tmp);
+    file_put_contents("Upload/$id.jpg",$upload);      
        
-$result="UPDATE `add1` SET `name`='$name',`address`='$addr',`contact`='$cont',`salary`='$sal' WHERE id='$id'";       
+$result="UPDATE `add1` SET `name`='$name',`address`='$addr',`contact`='$cont',`salary`='$sal' WHERE id='$id'"; 
+            unlink("Upload/$id.jpg",$upload);    
  if($sql=$conn->query($result))
 	{
 
@@ -34,5 +34,5 @@ $result="UPDATE `add1` SET `name`='$name',`address`='$addr',`contact`='$cont',`s
      }
 
 }
-
+else header("location:../index.php");
 ?>

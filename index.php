@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 if(isset($_SESSION['flag']))
@@ -88,4 +87,5 @@ if(isset($_SESSION['flag']))
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script type="text/javascript" src="login_assets/js/bootstrap.min.js"></script>
 </body>
+    
 </html>

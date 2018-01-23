@@ -122,7 +122,7 @@
                                    
                                     <div class="text-center">
                                         <button type="submit" name="add" class="btn btn-info btn-fill btn-wd ">ADD</button>
-                                        <a href="navv1.php" type="button" class="btn btn-info btn-fill btn-wd ">EXIT</a>
+                                        <a href="navv1.php" onclick ="return confirm('Do You Want to Exit')" type="button" class="btn btn-info btn-fill btn-wd ">EXIT</a>
                                     </div>
                                     <br/>
 <!--

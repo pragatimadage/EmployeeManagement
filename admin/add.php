@@ -1,4 +1,7 @@
 <?php
+    SESSION_START();
+      if(isset($_SESSION['flag']))
+{
     $servername = "localhost";
 $username = "root";
 $password = "";
@@ -22,7 +25,7 @@ $sal = $_POST['salary'];
     
    
      
-			     $result="INSERT INTO `add1`(`id`, `name`, `address`, `contact`, `salary`) VALUES ('$id','$name','$addr','$cont','$sal')";
+			     $result="INSERT INTO `add1`( `id`, `name`, `address`, `contact`, `salary`) VALUES ('$id','$name','$addr','$cont','$sal')";
  if($sql=$conn->query($result))
 	{
 
@@ -36,5 +39,7 @@ header("location:navv1.php");
      }
 
 	
+}else {header("location:../index.php");
+            }
 
 ?>

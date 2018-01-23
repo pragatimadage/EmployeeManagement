@@ -1,4 +1,8 @@
 <!doctype html>
+<?php
+session_Start();
+if (isset($_SESSION['flag']))
+    {?>
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
@@ -30,4 +34,6 @@
     <link href="assets/css/themify-icons.css" rel="stylesheet">
 
 </head>
-    <body>
+   <?php }else {header("location:../index.php");
+            }?>
+</html>

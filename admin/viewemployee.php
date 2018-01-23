@@ -195,6 +195,6 @@ mysqli_close($conn);
 
 
 </body>
-    <?php }else header("location:index.php");?>
+    <?php }else header("location:../index.php");?>
 
 </html>

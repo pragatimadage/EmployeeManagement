@@ -73,6 +73,7 @@
 
                         <ul class="nav navbar-nav">
                               <li class="active" ><a  href="admin/navv1.php">HOME</a></li>
+                            <li class="active" ><a  href="print1.php">PRINT</a></li>
                            
                               
                              

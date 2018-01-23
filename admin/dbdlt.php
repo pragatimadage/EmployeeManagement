@@ -16,7 +16,9 @@ if(isset($_GET['id']))
      $pos=$_GET['id'];
     
     $sql="DELETE FROM `add1` WHERE id='$pos'";
-$result = mysqli_query($conn, $sql);
+$result = mysqli_query($conn, $sql);     
+$path="Upload/$pos.jpg";
+    unlink($path);
     $msg="Record Is Deleted";
 echo"<script>alert('$msg');window.location.assign('navv1.php');</script>";
 }
@@ -24,6 +26,7 @@ else
 {
     
    echo"not Found";
+    echo"<script>alert('$msg');window.location.assign('navv1.php');</script>";
 }
     }
     else header("location:../index.php")

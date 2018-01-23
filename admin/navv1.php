@@ -3,7 +3,9 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
-    <?php if(isset($_SESSION['flag'])){ ?>
+    <?php if(isset($_SESSION['flag']))
+{ 
+  ?>
 <head>
   <title>Bootstrap Example</title>
   <meta charset="utf-8">
@@ -87,9 +89,9 @@ session_start();
 <ul class="nav navbar-nav">
       <li class="active"><a  href="navv1.php">HOME</a></li>
       <li class=""><a href="../viewuser.php">VIEW USER</a></li>
-     <li ><a href="viewemployee.php">VIEW EMPLOYEE</a></li>
+<!--     <li ><a href="viewemployee.php">VIEW EMPLOYEE</a></li>-->
         <li ><a href="addemployee_1.php">ADD EMPLOYEE</a></li>
-      
+       <li ><a href="../print.php">PRINT</a></li>
       </ul>
        <ul class="nav  navbar-right">
      <ul class="dropdown">
@@ -106,7 +108,7 @@ session_start();
  
 </div>
     <div class="container">
-                       <h2>User Details</h2>
+                       <h2>Employee Details</h2>
                             <?php
                     $servername = "localhost";
                     $username = "root";
@@ -178,8 +180,9 @@ mysqli_close($conn);
         <td><?php echo $row['salary']; ?></td>
 <!--        <td><a src="upload/$id<?php echo $row['id']?>.jpg" hieght="50" width="50"></a></td>-->
           <td><img src="Upload/<?php echo $row['id'];?>.jpg" height="50" width="50"></td>
-<td><a href="dbdlt.php?id=<?php echo $row['id']; ?>"onclick="return confirm('Do You Want to Delete?');">Delete</a></td>
+          <td><a href="dbdlt.php?id=<?php echo $row['id'];?>" onclick="return confirm('Do You Want to Delete')">Delete</a></td>
         <td><a href="Update.php ?id=<?php echo $row['id']?>">Update</a></td>  
+<!--          <form action="../print.php" method="post"><input type="hidden" name="data" value="<?= $row['name'] ?>" /><td><input type="submit" value="Print"/></td></form>-->
       <?php } ?>
     </tbody>
   </table>
@@ -211,7 +214,7 @@ mysqli_close($conn);
     </div>
     </div>
 </body>
-    <?php }else header("location:index.php");?>
+    <?php }else header("location:../index.php");?>
 
 </html>
 

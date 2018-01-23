@@ -104,7 +104,7 @@ $row = $result->fetch_assoc()
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>IMAGE</label>
-                                                <input type="file"  accesskey="image/*" name="pic" id="pic" placeholder="Picture" required>
+                                                <input type="file"  accesskey="image/*" name="pic" id="pic" required>
                                       
                                         </div>
                                  <?php }?>
