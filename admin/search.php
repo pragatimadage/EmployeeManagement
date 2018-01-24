@@ -1,12 +1,11 @@
+<!DOCTYPE html>
 <?php
 session_start();
+      if(isset($_SESSION['flag']))
+      {
 ?>
-<!DOCTYPE html>
 <html lang="en">
-    <?php if(isset($_SESSION['flag']))
-{ 
-  ?>
-<head>
+    <head>
   <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,9 +23,8 @@ session_start();
 /*                   font-weight: 500;*/
                }
                                              body{
-/*                                    background-color:#dcdcdc;*/
+                                    background-color:#dcdcdc;
 /*                                     background-color:#4C4CA;*/
-                                                 
                                 }
             #nav1{
                 margin-left: 90%;
@@ -69,7 +67,7 @@ session_start();
         
     width: 500px;
     box-sizing: border-box;
-    border: 2px solid skyblue;
+    border: 0px solid #ccc;
     border-radius: 20px;
     font-size: 14px;
     background-color: white;
@@ -116,15 +114,13 @@ session_start();
 }
 
 .pagination a:hover{
-    background-color: gray;
+    background-color: black;
     border-radius: 5px;
-    color:white;
 }
 </style>
 </head>
-<body>
-
-<nav class="navbar navbar-inverse">
+    <body>
+        <nav class="navbar navbar-inverse">
   <div class="container-fluid">
    
 <ul class="nav navbar-nav">
@@ -157,54 +153,31 @@ session_start();
     <br/>
     <div class="container">
 
-
         
-                       <h3><CENTER>Employee  Details</CENTER></h3>
-        <br/>
-
-                            <?php
-                    $servername = "localhost";
-                    $username = "root";
-                    $password = "";
-                    $dbname = "form";
-                    $conn = new mysqli($servername, $username, $password, $dbname);
-                    if ($conn->connect_error)
-                    {
-                        die("Connection failed: " . $conn->connect_error);
-                    }
-
-if(isset($_GET['page']))
-    {
-      $paa = $_GET['page'];
-
-   }
-   else
-   {    
-       $_GET['page']=1;
-//       $paa =1;
-   }
-    $paa = $_GET['page'];
-    if($paa=="" || $paa=="1")
-        {
-            $page1=0;
-        }
-   else
-    {
-      $page1=($paa*3)-3;
-    }
-$sql = "SELECT * FROM `add1` ORDER BY Address_id desc limit $page1,3";
-   $result = $conn->query($sql);
-     $sql1 = "SELECT * FROM `add1` ORDER BY Address_id desc"; 
-   $result1 = $conn->query($sql1);         
-
-mysqli_close($conn);
-
-
-?>
-
-</div>
-
-<div class="container">
+        
+        <?php
+    $servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "form";
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error)
+{
+    die("Connection failed: " . $conn->connect_error);
+}
+          
+          
+          
+          
+          if(isset($_POST['search']))
+          {
+              $search=$_POST['search']   ;
+            $qry="select * from add1 where name='$search'";
+              $res=$conn->query($qry);
+               $count=mysqli_num_rows($res);
+              if($count>=1){
+        ?>
+              <div class="container">
          
   <table id="table1" class="table table-bordered table-hover" style="background-color:#F2EDED;"  >
     <thead style="background-color:gray; color:white;">
@@ -214,16 +187,16 @@ mysqli_close($conn);
         <th>NAME</th>
         <th>ADDRESS</th>
         <th>CONTACT</th> 
-        <th>SALARY</th> 
-        <th>IMAGE</th>
+        <th>SALARY</th>
+          <th>IMAGE</th>
           <th>DELETE</th>
           <th>UPDATE</th>
-        
+      
 
       </tr>
     </thead>
     <tbody>
-        <?php $i=0; while($row = $result->fetch_assoc()){ ?>
+        <?php $i=0; while($row=$res->fetch_assoc()){ ?>
       <tr>
           <td><?php $i++; echo $i; ?></td>
 <!--        <td><?php echo $row['id']; ?></td>-->
@@ -231,43 +204,21 @@ mysqli_close($conn);
         <td><?php echo $row['address']; ?></td>
         <td><?php echo $row['contact']; ?></td>
         <td><?php echo $row['salary']; ?></td>
-<!--        <td><a src="upload/$id<?php echo $row['id']?>.jpg" hieght="50" width="50"></a></td>-->
-          <td><img src="Upload/<?php echo $row['id'];?>.jpg" height="50" width="50"></td>
+            <td><img src="Upload/<?php echo $row['id'];?>.jpg" height="50" width="50"></td>
           <td><a href="dbdlt.php?id=<?php echo $row['id'];?>" onclick="return confirm('Do You Want to Delete')">Delete</a></td>
         <td><a href="Update.php ?id=<?php echo $row['id']?>">Update</a></td>  
-<!--          <form action="../print.php" method="post"><input type="hidden" name="data" value="<?= $row['name'] ?>" /><td><input type="submit" value="Print"/></td></form>-->
-      <?php } ?>
-    </tbody>
-  </table>
-    </div>
-     <div class="container">
-    <div class="pagination">
-         <?php if($_GET['page'] != 1){ ?> 
-        <a href="navv1.php?page=<?=$_GET['page']-1 ?>" >&laquo;  Previous</a>
-      <?php } ?>
-       
+        
+        </tr>
+          <?php }?>
+      </tbody>
+     </table>
+        </div>
+    <?php } else{$msg="Record Not Found!!";
+                echo"<script>alert('$msg');window.location.assign('navv1.php');</script>";}}?>
+        </div>
+    </body>
     <?php
-    $count=mysqli_num_rows($result1);
-                                    
-    $p=$count/3;
-   $p=ceil($p);
-                                       
-                      for($i=1;$i<=$p;$i++)
-                                       { 
-                                           ?>
-    
-
-    <a href="navv1.php?page=<?php echo $i;?>" <?php if($_GET['page'] == $i){echo 'class="active"';} ?> ><?php echo $i;?></a><?php
-                                            
-                                       }
-                                    ?>
-       <?php if($_GET['page'] != $p){ ?>
-        <a href="navv1.php?page=<?=$_GET['page']+1 ?>">Next  &raquo;</a>
-        <?php } ?>
-    </div>
-    </div>
-</body>
-    <?php }else header("location:../index.php");?>
-
-</html>
-
+    }
+else
+{header("location:index.php");}
+?>
