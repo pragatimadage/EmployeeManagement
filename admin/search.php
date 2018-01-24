@@ -214,8 +214,8 @@ if ($conn->connect_error)
      </table>
         </div>
 
-    <?php } else{echo "not found";
-                echo "header("loaction:navv1.php")";}}?>
+    <?php } else{$msg=" Record not found";
+                echo"<script>alert('$msg');window.location.assign('navv1.php');</script>";}}?>
 
         </div>
     </body>
