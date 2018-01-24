@@ -43,22 +43,35 @@
   <script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/js/select2.min.js"></script>
-
+    <style>
+        h4{
+            margin-bottom: 20px;
+        }
+        .card{
+            margin-top: 50px; 
+        }
+        body{
+             background-color :#f4f3ef;
+       }
+        .btn{
+            width: 140px;
+        }
+        .well{
+            background-color:#E8E8E8;
+        }
+    </style>
 
 </head>
-    <body>
-    
-
-
-
+    <body> 
 <div class="wrapper">
 	<div class="content">
             <div class="container-fluid">
-                <div class="well">
+                
                 <div class="row">
                     <center>
                     <div class="col-md-offset-4 col-lg-3" align="center">
                         <div class="card">
+                            <div class="well">
                             <div class="header">
                                 <h4 class="title">Registration</h4>
                             </div>
@@ -69,7 +82,7 @@
                                     <div class="row" >
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label>First Name</label>
+                                                <label>FIRST NAME</label>
                                                 <input type="text" name="fname" id="fname" class="form-control border-input name" placeholder="First Name" required>
                                             </div>
                                         </div>
@@ -77,7 +90,7 @@
                                      <div class="row">
                                          <div class="col-md-12">
                                             <div class="form-group">
-                                                <label>Last Name</label>
+                                                <label>LAST NAME</label>
                                                 <input type="text" id="lname" name="lname" class="form-control border-input name"  placeholder="Last Name" required>
                                             </div>
                                         </div>
@@ -85,7 +98,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label>Email</label>
+                                                <label>EMAIL</label>
                                                 <input type="email" name="email" id="email" class="form-control border-input"  placeholder="Email">
                                             </div>
                                         </div>
@@ -93,7 +106,7 @@
                                         <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label>Password</label>
+                                                <label>PASSWORD</label>
                                                 <input type="password" name="password" id="password" class="form-control border-input" placeholder="Password" >
                                             </div>
                                         </div>
@@ -101,36 +114,21 @@
                                          <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label for="exampleInputEmail1">Mobile</label>
-                                                <input type="text" name="mobile" class="form-control border-input" id="no" placeholder="Mobile NO" maxlength="10" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                                <label for="exampleInputEmail1">MOBILE</label>
+                                                <input type="text" name="mobile" class="form-control border-input" id="no" placeholder="Mobile No" maxlength="10" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                             </div>
                                         </div>
                                         </div>
-                                   
-
-                                    
-
-<!--
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label>Gender</label>
-                                                <input type="text" name="gender" id="gender" class="form-control border-input name" placeholder="Gender" >
-                                            </div>
-                                        </div>
-                                    </div>
--->
-
-                   
+                                  
                                         <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label for="exampleInputEmail1">Gender</label>
+                                                <label for="exampleInputEmail1">GENDER</label>
                                                 <br/>
-                                                <label for="exampleInputEmail1">Male</label> 
+                                                <label for="exampleInputEmail1">MALE</label> 
                                                 <input type="radio" name="gender" value="MALE" checked="checked">
                                               
-                                                <label for="exampleInputEmail1">Female</label> 
+                                                <label for="exampleInputEmail1">FEMALE</label> 
                                                 <input type="radio" name="gender" value="FEMALE" >
                                             </div>
                                         </div>
@@ -138,30 +136,26 @@
 
                                    
                                     <div class="text-center">
-                                        <button type="submit" name="reg" class="btn btn-info btn-fill btn-wd">Register</button>
+                                        <button type="submit" name="reg" class="btn btn-info btn-fill btn-wd">REGISTER</button>
+                                        <a href="index.php" type="button"  class="btn btn-info btn-fill btn-wd">LOGIN</a>
                                     </div>
                                     <div class="clearfix"></div>
                                 </form>
                             </div>
                            
                         </div>
+                            </div>
                     </div>
- </center>
-
+                    </center>
                 </div>
-   
-   
             </div>
-                </div>
+            
         </div>
-    
-
-
-       
-
-    </div>
-  
-              <script>
+   </div>
+            <div class="container">
+             <a href="" type="button" class="btn btn-warning" style="color:white">PRINT</a>
+            </div>
+ <script>
   $(document).ready(function(){
     $(".name").bind('keydown', function(event) {
       var key = event.which;
@@ -172,20 +166,7 @@
           return true;
         }
      });
-//        $("#no").keydown(function(){
-//        var key=event.which;
-//          if(key >=48 && key <= 57)
-//              {  
-//                return true;
-//                
-//                }
-//             else
-//              {
-//                return false;
-//                
-//              }
-//
-//      });
+
     });
    $(document).ready(function(){
     var a = $("#lname");
@@ -248,8 +229,7 @@
            });
               
    });
-  
-        </script>
+   </script>
 
 </body>
 

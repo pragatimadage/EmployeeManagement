@@ -48,7 +48,7 @@
              margin-left: 50px;
          }
          .well{
-             background-color:	#F0F0F0;
+             background-color:#E8E8E8;
 /*             background-color:azure;*/
          }
     </style>
