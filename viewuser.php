@@ -199,7 +199,7 @@
                     <div class="container">
 
                       <table class="table table-bordered table-hover table-striped " style="background-color:cornsilk" >
-                        <thead style="background-color:gray; color:white;">
+                        <thead style="background-color:#909090; color:white;">
                           <tr>
                             <th>Srno.</th>
 <!--                            <th>ID</th>-->

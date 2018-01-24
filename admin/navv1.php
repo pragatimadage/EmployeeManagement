@@ -65,7 +65,7 @@ session_start();
                                 }
                .dropdown-menu li a{
                    outline: none;
-                   border-radius:15px;
+                   border-radius:20px;
                }
                                     h3{ 
                                     padding-top: 5px;
@@ -240,7 +240,7 @@ mysqli_close($conn);
 <div class="container">
          
   <table id="table1" class="table table-bordered table-hover table-striped " style="background-color:cornsilk">
-    <thead style="background-color:gray; color:white;">
+    <thead style="background-color:#909090; color:white;">
       <tr>
         <th>Srno.</th>
 <!--        <th>ID</th>-->
