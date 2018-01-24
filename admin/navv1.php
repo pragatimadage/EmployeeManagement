@@ -24,8 +24,9 @@ session_start();
 /*                   font-weight: 500;*/
                }
                                              body{
-                                    background-color:#dcdcdc;
+/*                                    background-color:#dcdcdc;*/
 /*                                     background-color:#4C4CA;*/
+                                                 
                                 }
             #nav1{
                 margin-left: 90%;
@@ -68,7 +69,7 @@ session_start();
         
     width: 500px;
     box-sizing: border-box;
-    border: 0px solid #ccc;
+    border: 2px solid skyblue;
     border-radius: 20px;
     font-size: 14px;
     background-color: white;
@@ -115,8 +116,9 @@ session_start();
 }
 
 .pagination a:hover{
-    background-color: black;
+    background-color: gray;
     border-radius: 5px;
+    color:white;
 }
 </style>
 </head>

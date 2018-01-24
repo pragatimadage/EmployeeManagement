@@ -18,9 +18,15 @@ if(isset($_SESSION['flag']))
     <link rel="stylesheet" href="login_assets/css/bootstrap.min.css" type="text/css"/>
     <link rel="stylesheet" href="login_assets/css/style.css" type="text/css"/>
     <style>
-        body{
-            background-color: lightgray;
-        }
+/*
+         body{
+             background-color :#f4f3ef;
+             }
+    
+*/
+                                body{
+                                         background-color :#f4f3ef;
+                                }
     </style>
 </head>
 <body>

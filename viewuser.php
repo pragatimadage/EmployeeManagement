@@ -13,25 +13,28 @@
                       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
                       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
                       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
                             <style>
                                  .navbar{
                                           background-color:#062456;
+/*                                                background-color :#f4f3ef;*/
                                      }
                                      body{
-                                    background-color:#dcdcdc;
-/*                                     background-color:#4C4CA;*/
+/*                                    background-color:#dcdcdc;*/
+/*                                     background-color:cornsilk;*/
+                                         background-color :#f4f3ef;
                                 }
                                 .navbar-nav li a{
-                                    margin-left: 70px;
+                                    margin-left:0px;
                                 }
                       .nav li a{
                          font-family: "museo-sans", helvetica, sans-serif; 
                         
                          }
                                 .navbar-nav li a:hover{
-                                     color:white
+                                     color:black
                                         !important;
-                                    background-color: limegreen
+                                    background-color: #fcfcfc
                                         !important;
                                 }
                              
@@ -41,6 +44,43 @@
                                         ! important;
                                     color: black
                                         !important;
+                                }
+                                 input[type=text] {
+                                        width: 500px;
+                                        box-sizing: border-box;
+                                        border: 2px solid skyblue;
+                                        border-radius: 20px;
+                                        font-size: 14px;
+                                        background-color:aliceblue;
+                                        background-position: 10px 10px; 
+                                        background-repeat: no-repeat;
+                                        padding: 10px 15px 10px 30px;
+                                        -webkit-transition: width 0.4s ease-in-out;
+                                        transition: width 0.4s ease-in-out;
+                                             outline: none;
+                                      margin-top: 15px;
+                                     margin-bottom: 20px;
+                                    }
+                                    .InputWithIcon input[type=text]{
+                                           padding-left: 40px; 
+
+                                        }
+                                    .InputWithIcon{
+                                        position: relative;
+                                        float: right;
+                                    }
+                                    .InputWithIcon i{
+                                        position:absolute;
+                                        left:0;
+                                        top:8px;
+                                        padding: 23px 10px;
+
+                                    } 
+                               
+                                    h3{ 
+                                    padding-top: 5px;
+                                    height: 5px;
+                                    
                                 }
                     .pagination {
                         display: inline-block;
@@ -74,7 +114,7 @@
 
                         <ul class="nav navbar-nav">
                               <li class="active" ><a  href="admin/navv1.php">HOME</a></li>
-                            <li class="active" ><a  href="print1.php">PRINT</a></li>
+                              <li><a  href="print1.php">PRINT</a></li>
                            
                               
                              
@@ -82,8 +122,27 @@
                         
                         </div>
                     </nav> 
+<!--
+                     <div  class="container">
+                        <div class="InputWithIcon">
+                            <input type="text" id="search" name="search" placeholder="Search..">
+                            <i class="fa fa-search fa-lg fa-fw" aria-hidden="true"></i>
+                        </div>
+                    </div>
+-->
+                            <br/>
                             <div class="container">
-                       <h2>User Details</h2>
+                                <div class="row"> 
+                                           <div class="col-md-6"> 
+                                               <h3>USER  DETAILS</h3>
+                                           </div>
+                                           <div class="col-md-6"> 
+                                               <div class="InputWithIcon">
+                                                    <input type="text" id="search" name="search" placeholder="Search..">
+                                                    <i class="fa fa-search fa-lg fa-fw" aria-hidden="true"></i>
+                                               </div>
+                                           </div>
+                                    </div> 
                             <?php
                     $servername = "localhost";
                     $username = "root";
@@ -127,7 +186,7 @@
                     </div>
                     <div class="container">
 
-                      <table class="table table-bordered table-hover" style="background-color:#F2EDED" >
+                      <table class="table table-bordered table-hover table-striped " style="background-color:cornsilk" >
                         <thead style="background-color:gray; color:white;">
                           <tr>
                             <th>Srno.</th>

@@ -19,7 +19,8 @@
               background-color:#062456;
          }
                                     body{
-                                    background-color:#dcdcdc;
+/*                                    background-color:#dcdcdc;*/
+                                         background-color :#f4f3ef;
                              }
          .navbar-nav li a{
                         
@@ -48,7 +49,7 @@
          }
          .well{
              background-color:	#F0F0F0;
-/*             background-color:lightgray;*/
+/*             background-color:azure;*/
          }
     </style>
 </head>

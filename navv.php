@@ -13,12 +13,17 @@
                       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
                       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
                       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
                             <style>
                                 /*  
                                 design for logout*/
+/*
                                 body{
-                                    background-color:#dcdcdc;
-/*                                     background-color:#4C4CA;*/
+                                    background-color:#dcdcdc;                                  
+                                }
+*/
+                                 body{
+                                         background-color :#f4f3ef;
                                 }
                                 .navbar{
                                     background-color:#062456;
@@ -45,11 +50,14 @@
                                     height:35px;
                                     font-weight:bold;
                                     font-family: font-family: "museo-sans", helvetica, sans-serif;
+                                    
                                    
                                 }
-                                .dropdown-menu li a:hover{
+                                .dropdown-menu li a{
 /*                                    background-color:lightskyblue;*/
 /*                                    color:darkslategrey;*/
+                                    outline: none;
+                                    border-radius: 15px;
                                 }
                                 .navbar-nav li a{
                                    
@@ -69,7 +77,41 @@
                                     background-color:lawngreen;
                                 }
 */
-                                
+                                input[type=text] {
+                                    width: 500px;
+                                    box-sizing: border-box;
+                                    border: 2px solid skyblue;
+                                    border-radius: 20px;
+                                    font-size: 14px;
+                                    background-color:aliceblue;
+                                    background-position: 10px 10px; 
+                                    background-repeat: no-repeat;
+/*                                    padding: 12px 20px 12px 40px;*/
+                                    padding: 10px 15px 10px 30px;
+                                    -webkit-transition: width 0.4s ease-in-out;
+                                    transition: width 0.4s ease-in-out;
+                                         outline: none;
+                                    margin-top: 15px;
+                                }
+                                .InputWithIcon input[type=text]{
+                                       padding-left: 40px; 
+
+                                    }
+                                    .InputWithIcon{
+                                        position: relative;
+                                        float: right;
+                                    }
+                                    .InputWithIcon i{
+                                        position:absolute;
+                                        left:0;
+                                        top:8px;
+                                        padding: 24px 10px;
+
+                                    }               
+                                h3{ 
+                                    padding-top: 5px;
+                                    height: 5px;
+                               }
                     .pagination {
                         display: inline-block;
                         margin-left: 30%;
@@ -90,9 +132,11 @@
                     }
 
                     .pagination a:hover {
-                        background-color: black;
                         border-radius: 5px;
+                       background-color: gray;
+                       color:white;
                     }
+                   
                     </style>
 
                     </head>
@@ -116,12 +160,32 @@
                                 </div>
 
                             </nav>
+                            
+<!--
+                            <div  class="container">
+                                    <div class="InputWithIcon">
+                                    <input type="text" id="search" name="search" placeholder="Search..">
+                                    <i class="fa fa-search fa-lg fa-fw" aria-hidden="true"></i>
+                                    </div>
+                            </div>
+-->
+                            <br/>
+                            <br/>
                             <div class="container">
-                                <center>
-                                   <h3>USER DETAILS</h3>
-                                </center>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                       <h3>USER DETAILS</h3>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="InputWithIcon">
+                                            <input type="text" id="search" name="search" placeholder="Search..">
+                                            <i class="fa fa-search fa-lg fa-fw" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                </div>
                                 <BR/>
-                                <BR/>
+                                </div> 
+                            <div class="container"> 
                             <?php
                     $servername = "localhost";
                     $username = "root";
@@ -163,12 +227,13 @@
                      mysqli_close($conn);
                     ?>
                     </div>
+                                       
                     <div class="container">
 <!--                     <div class="card">-->
                           
                          <div class="card" style="background-color:aliceblue;">
                            
-                      <table class="table table-bordered table-hover" style="background-color:#F2EDED" >
+                      <table class="table table-bordered table-hover table-striped " style="background-color:cornsilk">
                        <thead style="background-color:gray; color:white;">
                           <tr>
                             <th>SR NO.</th>
