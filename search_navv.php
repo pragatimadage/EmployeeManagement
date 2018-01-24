@@ -211,7 +211,7 @@ if ($conn->connect_error)
         </div>
 
     <?php } else{$msg=" Record not found";
-                echo"<script>alert('$msg');window.location.assign('navv1.php');</script>";}}?>
+                echo"<script>alert('$msg');window.location.assign('navv.php');</script>";}}?>
 
         </div>
     </body>
