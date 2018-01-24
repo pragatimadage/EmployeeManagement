@@ -105,6 +105,16 @@
                         background-color:black;
                         border-radius: 5px;
                     }
+                                #print{
+                 margin-top:21px;  
+                display: inline-block;  
+                   width:100px;
+                   height:38px;
+                   padding-top:8px;
+                   background-color: white;
+                                    color:black;
+                   border:1px solid blue;                    
+               }   
                     </style>
 
                     </head>
@@ -114,7 +124,7 @@
 
                         <ul class="nav navbar-nav">
                               <li class="active" ><a  href="admin/navv1.php">HOME</a></li>
-                              <li><a  href="print1.php">PRINT</a></li>
+<!--                              <li><a  href="print1.php">PRINT</a></li>-->
                            
                               
                              
@@ -138,9 +148,8 @@
                                            </div>
                                            <div class="col-md-6"> 
                                                <div class="InputWithIcon">
-                                                   <form action="search_user.php" method="post"> <input type="text" id="search" name="search" placeholder="Search..">
-                    <i class="fa fa-search fa-lg fa-fw" aria-hidden="true"></i>
-                       </form>
+                                                    <input type="text" id="search" name="search" placeholder="Search..">
+                                                    <i class="fa fa-search fa-lg fa-fw" aria-hidden="true"></i>
                                                </div>
                                            </div>
                                     </div> 
@@ -214,6 +223,9 @@
                           <?php } ?>
                         </tbody>
                       </table>
+                        <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
                         <div class="pagination">
                             
                             <?php if($_GET['page'] != 1){ ?> 
@@ -233,7 +245,13 @@
                              <?php if($_GET['page'] != $p){ ?>
                             <a href="viewuser.php?page=<?=$_GET['page']+1 ?>">next</a>
                             <?php } ?>
+                            </div>
+                        </div>
+                            <div class="col-md-6">
+                                    <a href="print1.php"id="print" type="button" id="print" class="btn btn-info">PRINT</a>
+                            </div>
                       </div>
+                     </div>
                     </div>
 
                     </body>

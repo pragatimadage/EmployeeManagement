@@ -17,17 +17,16 @@ session_start();
            <style>
                
                 .navbar{
-                                                  background-color:#062456;
+                      background-color:#062456;
 /*                    font-weight: 500;*/
                                              }
                .navbar-nav li a{
 /*                   font-weight: 500;*/
                }
-                                             body{
-/*                                    background-color:#dcdcdc;*/
-/*                                     background-color:#4C4CA;*/
-                                                 
-                                }
+               body{
+                  background-color :#f4f3ef;
+                  }
+                                  
             #nav1{
                 margin-left: 90%;
             }
@@ -64,6 +63,15 @@ session_start();
                                     font-family: font-family: "museo-sans", helvetica, sans-serif;
                                    
                                 }
+               .dropdown-menu li a{
+                   outline: none;
+                   border-radius:15px;
+               }
+                                    h3{ 
+                                    padding-top: 5px;
+                                    height: 5px;
+                                    }
+               
             
     input[type=text] {
         
@@ -72,13 +80,15 @@ session_start();
     border: 2px solid skyblue;
     border-radius: 20px;
     font-size: 14px;
-    background-color: white;
+    background-color:aliceblue;
     background-position: 10px 10px; 
     background-repeat: no-repeat;
-    padding: 12px 20px 12px 40px;
+    padding: 10px 15px 10px 30px;
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
          outline: none;
+        margin-top: 15px;
+       margin-bottom: 5px;
 }
 .InputWithIcon input[type=text]{
        padding-left: 40px; 
@@ -92,7 +102,7 @@ session_start();
         position:absolute;
         left:0;
         top:8px;
-        padding: 9px 8px;
+        padding: 22px 8px;
       
     }               
 
@@ -120,6 +130,13 @@ session_start();
     border-radius: 5px;
     color:white;
 }
+               #print{
+                 margin-top:21px;  
+                display: inline-block;  
+                   width:100px;
+                   height:38px;
+                   padding-top:8px;
+               }               
 </style>
 </head>
 <body>
@@ -132,7 +149,7 @@ session_start();
       <li class=""><a href="../viewuser.php">VIEW USER</a></li>
 <!--     <li ><a href="viewemployee.php">VIEW EMPLOYEE</a></li>-->
         <li ><a href="addemployee_1.php">ADD EMPLOYEE</a></li>
-       <li ><a href="../print.php">PRINT</a></li>
+<!--       <li ><a href="../print.php">PRINT</a></li>-->
       </ul>
        <ul class="nav  navbar-right">
      <ul class="dropdown">
@@ -144,25 +161,37 @@ session_start();
     </ul>
       </div>
    </nav>
+<!--
          <div  class="container">
          <div class="InputWithIcon">
-                   <form action="search_navv1.php" method="post"> <input type="text" id="search" name="search" placeholder="Search..">
+                   <form action="search.php" method="post"> <input type="text" id="search" name="search" placeholder="Search..">
                     <i class="fa fa-search fa-lg fa-fw" aria-hidden="true"></i>
-                       </form>
+                  </form>
         </div>
         </div>
   
           
     <br/>
     <br/>
+-->
     <div class="container">
-
-
-        
-                       <h3><CENTER>Employee  Details</CENTER></h3>
+        <div class="row">
+            <div class="col-md-6">
+                    <h3>EMPLOYEE DETAILS</h3>
+            </div>
+            <div class="col-md-6">
+                <div class="InputWithIcon">
+                   <form action="search.php" method="post"> 
+                       <input type="text" id="search" name="search" placeholder="Search..">
+                    <i class="fa fa-search fa-lg fa-fw" aria-hidden="true"></i>
+                  </form>
+                </div>
+            </div>
+        </div>
+    </div>
         <br/>
-
-                            <?php
+               <div class="container">
+                 <?php
                     $servername = "localhost";
                     $username = "root";
                     $password = "";
@@ -206,7 +235,7 @@ mysqli_close($conn);
 
 <div class="container">
          
-  <table id="table1" class="table table-bordered table-hover" style="background-color:#F2EDED;"  >
+  <table id="table1" class="table table-bordered table-hover table-striped " style="background-color:cornsilk">
     <thead style="background-color:gray; color:white;">
       <tr>
         <th>Srno.</th>
@@ -241,7 +270,9 @@ mysqli_close($conn);
   </table>
     </div>
      <div class="container">
-    <div class="pagination">
+         <div class="row">
+          <div class="col-md-6">     
+         <div class="pagination">
          <?php if($_GET['page'] != 1){ ?> 
         <a href="navv1.php?page=<?=$_GET['page']-1 ?>" >&laquo;  Previous</a>
       <?php } ?>
@@ -264,8 +295,14 @@ mysqli_close($conn);
        <?php if($_GET['page'] != $p){ ?>
         <a href="navv1.php?page=<?=$_GET['page']+1 ?>">Next  &raquo;</a>
         <?php } ?>
+         </div>
     </div>
+          <div class="col-md-6">
+              <a href="../print.php" type="button" id="print" class="btn btn-info">PRINT</a>
+         </div>
+     </div>
     </div>
+            
 </body>
     <?php }else header("location:../index.php");?>
 

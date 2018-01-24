@@ -152,9 +152,7 @@
             
         </div>
    </div>
-            <div class="container">
-             <a href="" type="button" class="btn btn-warning" style="color:white">PRINT</a>
-            </div>
+            
  <script>
   $(document).ready(function(){
     $(".name").bind('keydown', function(event) {

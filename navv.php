@@ -258,6 +258,9 @@
 <!--                    </div>-->
                                  
                           </div>
+                        <div class="continer">
+<!--                            <div class="row">-->
+<!--                            <div class="col-md-6">    -->
                         <div class="pagination">
                              <center>
                             <?php if($_GET['page'] != 1){ ?> 
@@ -278,9 +281,18 @@
                             <a href="navv.php?page=<?=$_GET['page']+1 ?>">next</a>
                             <?php } ?>
                          </center>
+                        </div>
                       </div>
-                      
-                    </div>
+<!--
+                                <div class="col-md-6">
+                                    <div class="col-md-6">
+                                        <a href="../print.php" type="button" id="print" class="btn btn-info">PRINT</a>
+                                    </div>
+                                </div>
+-->
+                     </div>
+<!--                      </div>-->
+<!--                    </div>-->
 <!--
                             <div class="card" style="width=400px;height=200px;">
                                 jhkjg
