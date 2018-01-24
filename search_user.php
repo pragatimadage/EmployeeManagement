@@ -1,4 +1,4 @@
-                    <?php
+    <?php
                     session_start();
                     if(isset($_SESSION['flag']))
                     {
@@ -143,53 +143,34 @@
                        </form>
                                                </div>
                                            </div>
-                                    </div> 
-                            <?php
-                    $servername = "localhost";
-                    $username = "root";
-                    $password = "";
-                    $dbname = "form";
-                    $conn = new mysqli($servername, $username, $password, $dbname);
-                    if ($conn->connect_error)
-                    {
-                        die("Connection failed: " . $conn->connect_error);
-                    }
-
-                      if(isset($_GET['page'])){
-                            $paa = $_GET['page'];
-
-                        }else{
-                          $_GET['page']=1;
-                          $paa=1;
-                        }
-                            if($paa=="" || $paa=="1")
-                            {
-                                $page1=0;
-                            }
-                                      else{
-                                        $page1=($paa*3)-3;
-                                        }
-
-                    $sql = "SELECT * FROM `signup` limit $paa,3";
-                       $result = $conn->query($sql);
-                    $sql1 = "SELECT * FROM `signup` ";
-                       $result1 = $conn->query($sql1);         
-
-                    $sql = "SELECT * FROM `signup` ORDER BY Address_id desc";
-                       $result = $conn->query($sql);           
-
-                    $sql= "SELECT * FROM `signup` ORDER BY Address_id desc limit $page1,3";
-                       $result= $conn->query($sql);
-                    $sql1= "SELECT * FROM `signup` ORDER BY Address_id desc ";
-                       $result1= $conn->query($sql1);         
-                     mysqli_close($conn);
-                    ?>
-                    </div>
-                    <div class="container">
-
-                      <table class="table table-bordered table-hover table-striped " style="background-color:cornsilk" >
-                        <thead style="background-color:gray; color:white;">
-                          <tr>
+                                    </div> <?php
+    $servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "form";
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error)
+{
+    die("Connection failed: " . $conn->connect_error);
+}
+          
+          
+          
+          
+          if(isset($_POST['search']))
+          {
+              $search=$_POST['search']   ;
+            $qry="select * from signup where fname='$search'";
+              $res=$conn->query($qry);
+               $count=mysqli_num_rows($res);
+              if($count>=1){
+        ?>
+              <div class="container">
+         
+  <table id="table1" class="table table-bordered table-hover" style="background-color:#F2EDED;"  >
+    <thead style="background-color:gray; color:white;">
+      <tr>
+         <tr>
                             <th>Srno.</th>
 <!--                            <th>ID</th>-->
                             <th>NAME</th>
@@ -198,45 +179,25 @@
                             <th>Gender</th> 
                             <th>Delete</th> 
                           </tr>
-                        </thead>
-                        <tbody>
-                            <?php $i=0; while($row = $result->fetch_assoc()){ ?>
-                          <tr>
-                              <td><?php $i++; echo $i; ?></td>
-<!--                            <td><?php echo $row['id']; ?></td>-->
-                            <td><?php echo $row['fname']; ?></td>
-                            <td><?php echo $row['email']; ?></td>
-                            <td><?php echo $row['mobile']; ?></td>
-                            <td><?php echo $row['gender']; ?></td>
-                            <td> <a href="registerdelet.php?id=<?php echo $row['id']; ?>" onclick="return confirm('Do you want to delete this ? ');">Delete</a></td>
+    </thead>
+    <tbody>
+        <?php $i=0; while($row=$res->fetch_assoc()){ ?>
+      <tr>
+          <td><?php $i++; echo $i; ?></td>
+<!--        <td><?php echo $row['id']; ?></td>-->
+        <td><?php echo $row['fname']; ?></td>
+        <td><?php echo $row['email']; ?></td>
+        <td><?php echo $row['mobile']; ?></td>
+        <td><?php echo $row['gender']; ?></td>
+         <td><a href="registerdelet.php?id=<?php echo $row['id']; ?>" onclick="return confirm('Do you want to delete this ? ');">Delete</a></td>
+        
+        </tr>
+          <?php }?>
+      </tbody>
+     </table>
+        </div>
 
-                          </tr>
-                          <?php } ?>
-                        </tbody>
-                      </table>
-                        <div class="pagination">
-                            
-                            <?php if($_GET['page'] != 1){ ?> 
-                            <a href="viewuser.php?page=<?=$_GET['page']-1 ?>" >prev</a>
-                          <?php } ?>
-                       <?php
-                        $count=mysqli_num_rows($result1);                                
-                        $p=$count/3;
-                       $p=ceil($p);
-                            for($i=1;$i<=$p;$i++)
-                             { 
-                                ?>
-                      <a href="viewuser.php?page=<?php echo $i;?>" <?php if($_GET['page'] == $i){echo 'class="active"';} ?>><?php echo $i;?></a>
-
-                    <?php
-                        }?>
-                             <?php if($_GET['page'] != $p){ ?>
-                            <a href="viewuser.php?page=<?=$_GET['page']+1 ?>">next</a>
-                            <?php } ?>
-                      </div>
-                    </div>
-
-                    </body>
-                        <?php }else header("location:../index.php");?>
-
-                    </html>
+    <?php } else{$msg=" Record not found";
+                echo"<script>alert('$msg');window.location.assign('viewuser.php');</script>";}}?>
+                            </div></body>
+</html>   <?php }else header("location:../index.php");?>

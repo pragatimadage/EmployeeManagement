@@ -174,12 +174,13 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col-md-6">
-                                       <h3>USER DETAILS</h3>
+                                       <h3>Employee Details</h3>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="InputWithIcon">
-                                            <input type="text" id="search" name="search" placeholder="Search..">
-                                            <i class="fa fa-search fa-lg fa-fw" aria-hidden="true"></i>
+                                          <form action="search_navv.php" method="post"> <input type="text" id="search" name="search" placeholder="Search..">
+                    <i class="fa fa-search fa-lg fa-fw" aria-hidden="true"></i>
+                       </form>
                                         </div>
                                     </div>
                                 </div>
@@ -212,17 +213,11 @@
                                         $page1=($paa*3)-3;
                                         }
 
-                    $sql = "SELECT * FROM `signup` limit $paa,3";
-                       $result = $conn->query($sql);
-                    $sql1 = "SELECT * FROM `signup` ";
-                       $result1 = $conn->query($sql1);         
+                              
 
-                    $sql = "SELECT * FROM `signup` ORDER BY Address_id desc";
-                       $result = $conn->query($sql);           
-
-                    $sql= "SELECT * FROM `signup` ORDER BY Address_id desc limit $page1,3";
+                    $sql= "SELECT * FROM `add1` ORDER BY Address_id desc limit $page1,3";
                        $result= $conn->query($sql);
-                    $sql1= "SELECT * FROM `signup` ORDER BY Address_id desc ";
+                    $sql1= "SELECT * FROM `add1` ORDER BY Address_id desc ";
                        $result1= $conn->query($sql1);         
                      mysqli_close($conn);
                     ?>
@@ -235,28 +230,28 @@
                            
                       <table class="table table-bordered table-hover table-striped " style="background-color:cornsilk">
                        <thead style="background-color:gray; color:white;">
-                          <tr>
-                            <th>SR NO.</th>
-<!--                            <th>ID</th>-->
-                            <th>NAME</th>
-                            <th>EMAIL</th>
-                            <th>MOBILE</th> 
-                            <th>GENDER</th> 
-                            <th>DELETE</th> 
-                          </tr>
+                          <th>Srno.</th>
+<!--        <th>ID</th>-->
+        <th>NAME</th>
+        <th>ADDRESS</th>
+        <th>CONTACT</th> 
+        <th>SALARY</th> 
+        <th>IMAGE</th>
+         
+        
+
                         </thead>
                         <tbody>
                             <?php $i=0; while($row = $result->fetch_assoc()){ ?>
                           <tr>
-                              <td><?php $i++; echo $i; ?></td>
-<!--                            <td><?php echo $row['id']; ?></td>-->
-                            <td><?php echo $row['fname']; ?></td>
-                            <td><?php echo $row['email']; ?></td>
-                            <td><?php echo $row['mobile']; ?></td>
-                            <td><?php echo $row['gender']; ?></td>
-                            <td> <a href="registerdelet.php?id=<?php echo $row['id']; ?>" onclick="return confirm('Do you want to delete this ? ');">Delete</a></td>
-
-                          </tr>
+                             <td><?php $i++; echo $i; ?></td>
+                             <td><?php echo $row['name']; ?></td>
+                            <td><?php echo $row['address']; ?></td>
+                            <td><?php echo $row['contact']; ?></td>
+                            <td><?php echo $row['salary']; ?></td>
+                            <td><img src="admin/Upload/<?php echo $row['id'];?>.jpg" height="50" width="50"></td>
+                            </tr> 
+          
                           <?php } ?>
                         </tbody>
                       </table>
