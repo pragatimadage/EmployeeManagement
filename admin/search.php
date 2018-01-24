@@ -213,7 +213,7 @@ if ($conn->connect_error)
       </tbody>
      </table>
         </div>
-    <?php } else{$msg="Record Not Found!!";
+    <?php } else{$msg=" Record not found";
                 echo"<script>alert('$msg');window.location.assign('navv1.php');</script>";}}?>
         </div>
     </body>
