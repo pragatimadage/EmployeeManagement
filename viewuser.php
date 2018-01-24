@@ -102,8 +102,9 @@
                     }
 
                     .pagination a:hover {
-                        background-color:black;
+                        background-color:gray;
                         border-radius: 5px;
+                        color: white;
                     }
                                 #print{
                  margin-top:21px;  
