@@ -108,12 +108,13 @@
                                 #print{
                  margin-top:21px;  
                 display: inline-block;  
-                   width:100px;
+                   width:120px;
                    height:38px;
                    padding-top:8px;
-                   background-color: white;
-                                    color:black;
-                   border:1px solid blue;                    
+                   background-color:#0099CC;
+                   color:azure;
+                  border-radius: 25px;                    
+                   border:1px solid white;                    
                }   
                     </style>
 
