@@ -136,9 +136,27 @@
 
                                    
                                     <div class="text-center">
-                                        <button type="submit" name="reg" class="btn btn-info btn-fill btn-wd">REGISTER</button>
+                                        <button type="submit" name="reg" class="btn btn-info btn-fill btn-wd" data-toggle="modal" data-target="#myModal">REGISTER</button>
+                                        
                                         <a href="index.php" type="button"  class="btn btn-info btn-fill btn-wd">LOGIN</a>
                                     </div>
+                                    
+                                    <div class="modal fade" id="myModal" role="dialog">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h5 class="modal-title">Registration</h5>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Congratulation!! Successfully Register</p>
+                                        </div>
+                                        <div class="modal-footer" >
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+    </div>
                                     <div class="clearfix"></div>
                                 </form>
                             </div>

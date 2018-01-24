@@ -51,7 +51,7 @@
                                         border: 2px solid skyblue;
                                         border-radius: 20px;
                                         font-size: 14px;
-                                        background-color:aliceblue;
+                                        background-color:white;
                                         background-position: 10px 10px; 
                                         background-repeat: no-repeat;
                                         padding: 10px 15px 10px 30px;

@@ -83,7 +83,7 @@
                                     border: 2px solid skyblue;
                                     border-radius: 20px;
                                     font-size: 14px;
-                                    background-color:aliceblue;
+                                    background-color:white;
                                     background-position: 10px 10px; 
                                     background-repeat: no-repeat;
 /*                                    padding: 12px 20px 12px 40px;*/
@@ -174,7 +174,7 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col-md-6">
-                                       <h3>Employee Details</h3>
+                                       <h3>EMPLOYEE DETAILS</h3>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="InputWithIcon">

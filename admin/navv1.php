@@ -80,7 +80,7 @@ session_start();
     border: 2px solid skyblue;
     border-radius: 20px;
     font-size: 14px;
-    background-color:aliceblue;
+    background-color:white;
     background-position: 10px 10px; 
     background-repeat: no-repeat;
     padding: 10px 15px 10px 30px;
@@ -153,7 +153,7 @@ session_start();
       <li class=""><a href="../viewuser.php">VIEW USER</a></li>
 <!--     <li ><a href="viewemployee.php">VIEW EMPLOYEE</a></li>-->
         <li ><a href="addemployee_1.php">ADD EMPLOYEE</a></li>
-<!--       <li ><a href="../print.php">PRINT</a></li>-->
+       <li ><a href="../sendsms.php">SEND SMS</a></li>
       </ul>
        <ul class="nav  navbar-right">
      <ul class="dropdown">
@@ -251,8 +251,6 @@ mysqli_close($conn);
         <th>IMAGE</th>
           <th>DELETE</th>
           <th>UPDATE</th>
-        
-
       </tr>
     </thead>
     <tbody>
