@@ -1,5 +1,5 @@
 <?php
-    SESSION_START();
+    session_start();
       if(isset($_SESSION['flag']))
 {
     $servername = "localhost";
