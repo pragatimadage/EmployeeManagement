@@ -2,7 +2,7 @@
    
     include_once("connection.php");
      
-$id=uniqid();
+            $id=uniqid();
             $first =$_POST['fname'];
 			 $last =$_POST['lname'];
 			 $email=$_POST['email'];
@@ -14,18 +14,18 @@ $id=uniqid();
     
     if($sql=$conn->query($result))
 	{
-
-//   echo "Your Successfully Register!!!!!!!!";
-        $msg = " Congratulation.. Successfully Register ";
-        echo "<script>alert('$msg');window.location.assign('index.php');</script>";
-
+      $msg = " Congratulation.. Successfully Register ";
+        echo "$msg";
+        echo "<script>window.location.assign('index.php');</script>";
+//       echo "<script>alert('$msg');window.location.assign('index.php');</script>";
+//        
+//        echo "<script>$('#myModal').modal('show')</script>";
 //        header("location:index.php");
         
 }
     else{
 		echo "Insert data";
 	}
-
-	$conn->close();
+$conn->close();
 
 ?>
